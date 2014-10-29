@@ -41,7 +41,7 @@ public class GameTest{
         int column = 0;
         int row = 0;
 
-        game.insert(0,1)
+        game.insert(0,1);
         game.changePlayer();
         game.insert(0,3);
         game.changePlayer();
