@@ -47,10 +47,10 @@ task selenium(type: Test, dependsOn: installApp) {
     doFirst {
         switch(ant.properties.os) {
             case 'unix':
-                'build/install/sparkIt/bin/sparkIt &'.execute()
+                'build/install/TicTacToe/bin/TicTacToe &'.execute()
                 break
             case 'windows':
-                'build\\install\\sparkIt\\bin\\sparkIt.bat'.execute()
+                'build\\install\\TicTacToe\\bin\\TicTacToe.bat'.execute()
                 break
         }
     }
@@ -64,7 +64,7 @@ task seleniumXvfb(type: Test, dependsOn: installApp) {
 
     doFirst {
         'bin/xvfb start'.execute()
-        'build/install/sparkIt/bin/sparkIt &'.execute()
+        'build/install/TicTacToe/bin/TicTacToe &'.execute()
     }
     
     doLast {
