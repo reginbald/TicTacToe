@@ -12,10 +12,16 @@ import org.junit.Test;
 public class BoardTest{
 
     @Test
+    // Test number of columns of grid
+    public void testGridColumns(){
+        Board board = new Board();
+        assertEquals(3, board.grid[0].length);
+    }
+
     // Test number of rows of grid
     public void testGridRows(){
         Board board = new Board();
-        assertEquals(3, board.grid[0].length);
+        assertEquals(3, board.grid.length);
     }
 
     @Test
