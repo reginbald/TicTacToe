@@ -34,5 +34,51 @@ dependencies {
     testCompile 'junit:junit:4.11'    
 
     compile 'com.sparkjava:spark-core:1.1.1'
+
+    seleniumCompile 'junit:junit:4.11'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-java:2.39.0'
+
+    seleniumXvfbCompile 'junit:junit:4.11'
+    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-java:2.39.0'
 }
 task stage { dependsOn installApp }
+
+sourceSets {
+    selenium
+    seleniumXvfb
+}
+
+task selenium(type: Test, dependsOn: installApp) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+
+    ant.condition(property: "os", value: "windows") { os(family: "windows") }
+    ant.condition(property: "os", value: "unix"   ) { os(family: "unix")    }
+
+    doFirst {
+        switch(ant.properties.os) {
+            case 'unix':
+                'build/install/sparkIt/bin/sparkIt &'.execute()
+                break
+            case 'windows':
+                'build\\install\\sparkIt\\bin\\sparkIt.bat'.execute()
+                break
+        }
+    }
+}
+
+task seleniumXvfb(type: Test, dependsOn: installApp) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+
+    environment "DISPLAY", ":99"
+
+    doFirst {
+        'bin/xvfb start'.execute()
+        'build/install/sparkIt/bin/sparkIt &'.execute()
+    }
+    
+    doLast {
+        'bin/xvfb stop'.execute()
+    }
+}
