@@ -13,7 +13,7 @@ public class Game{
     public Game(){
         board = new Board();
     }
-
+    // Changes player, if player 1 is currently playing, the function switches to player 2
     public void changePlayer(){
         if (board.players == 1){
             board.players = 2;
