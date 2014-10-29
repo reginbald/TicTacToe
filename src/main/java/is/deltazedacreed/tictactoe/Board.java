@@ -47,4 +47,10 @@ public class Board{
             players = 1;
         }
     }
+
+    public void initializePlayer(){
+        if (players == 2){
+            players = 1;
+        }
+    }
 }
