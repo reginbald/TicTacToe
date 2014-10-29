@@ -49,17 +49,18 @@ public class GameTest{
 
         StringBuilder test = game.board.writeGameField();
 
-        for (int j = 0; j < 30; j++){
+        for (int j = 0; j < 30; j = j + 3){
             if (j == 9 || j == 19 || j == 29){
+                assertEquals('\n', test.charAt(j));
+                j++;
                 row++;
                 column = 0;
-                assertEquals('\n', test.charAt(j));
             } else {
                 assertEquals('[', test.charAt(j));
-                assertEquals(game.board.grid[row][column], test.charAt(++j));
-                assertEquals(']', test.charAt(++j));
-                column++;
+                assertEquals(game.board.grid[row][column], test.charAt(j + 1));
+                assertEquals(']', test.charAt(j + 2));
             }
+            column++;
         }
     }
 }
