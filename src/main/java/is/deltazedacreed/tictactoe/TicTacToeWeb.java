@@ -9,13 +9,21 @@ import spark.*;
 /**
  * Class turns the TicTacToe game in to a web application using the Spark framework. 
  */
-public class TicTacToeWeb{
-    public static void main(String[] args) {
-        setPort(4575);
-        get(new Route("/") {
+public class TicTacToeWeb implements SparkApplication{
+    public static void main(String[] args){
+        SparkApplication tictactoeweb = new TicTacToeWeb();
+        String port = System.getenv("PORT");
+        if (port != null) {
+            setPort(Integer.valueOf(port));
+        }
+        tictactoeweb.init();
+    }
+
+    public void init(){
+        post(new Route("/"){
             @Override
-            public Object handle(Request request, Response response) {
-                return "Hello World!";
+            public Object handle(Request request, Response response){
+                return "HelloWorld";
             }
         });
     }
