@@ -1,9 +1,13 @@
 language: java
-
 jdk:
 - openjdk7
 - oraclejdk7
-
 script:
-  - ./gradlew check
-  - ./gradlew seleniumXvfb
+- "./gradlew check"
+- "./gradlew seleniumXvfb"
+deploy:
+  provider: heroku
+  api_key:
+    secure: DUqOty1MQZGIXk9F/DRuw/z4QWss5CNedUwbQNEoDtulZLQmZTCGjTxPq1Qnmq93TlVrRpUzQPCMWMJryWEdtYtotBI1pw7pHoxxvZshpOXg5+ZC7QWpL5t2RX/vQCLCSOI0lR9QphNmsm6Fl1ioVn25vK5fyGKjpmmsvyVv01I=
+  app: 
+    spark: tictactoe420
