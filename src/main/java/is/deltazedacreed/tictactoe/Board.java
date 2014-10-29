@@ -8,9 +8,11 @@ package is.deltazedacreed.tictactoe;
 public class Board{
 
     public static char grid[];
+    public static int players;
 
     // Constructor
     public Board(){
         grid = new char[9];
+        players = 1;
     }
 }
