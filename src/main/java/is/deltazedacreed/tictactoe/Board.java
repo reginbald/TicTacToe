@@ -38,4 +38,13 @@ public class Board{
         }
         return gameField;
     }
+
+    // Changes player, if player 1 is currently playing, the function switches to player 2
+    public void changePlayer(){
+        if (board.players == 1){
+            board.players = 2;
+        } else {
+            board.players = 1;
+        }
+    }
 }
