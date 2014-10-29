@@ -48,12 +48,13 @@ public class BoardTest{
     public void testGameField(){
         Board board = new Board();
         for (int i = 0; i < 3; i++){
-            for (int j = 0; j < 3; ++j){
-                assertEquals('[', board.gameField.charAt(j));
-                assertEquals(' ', board.gameField.charAt(++j));
-                assertEquals(']', board.gameField.charAt(++j));
+            int columnNr = 0;
+            for (int j = 0; j < 3; j++){
+                assertEquals('[', board.gameField.charAt(columnNr));
+                assertEquals(' ', board.gameField.charAt(++columnNr));
+                assertEquals(']', board.gameField.charAt(++columnNr));
             }
-            assertEquals('/n', board.gameField.charAt(9));
+            assertEquals('/n', board.gameField.charAt(++columnNr));
         }
     }
 }
