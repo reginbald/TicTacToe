@@ -12,7 +12,7 @@ import spark.*;
 public class TicTacToeWeb{
     public static void main(String[] args) {
         setPort(4575);
-        get(new Route("/hello") {
+        get(new Route("/") {
             @Override
             public Object handle(Request request, Response response) {
                 return "Hello World!";
