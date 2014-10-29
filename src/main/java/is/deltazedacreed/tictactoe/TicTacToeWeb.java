@@ -5,6 +5,7 @@ package is.deltazedacreed.tictactoe;
 
 import static spark.Spark.*;
 import spark.*;
+import spark.servlet.SparkApplication;
 
 /**
  * Class turns the TicTacToe game in to a web application using the Spark framework. 
