@@ -15,13 +15,14 @@ public class BoardTest{
     // Test size of grid
     public void testGridSize(){
         Board board = new Board();
-        assertEquals(9, board.grid.length);
+        char[][] expectedArray = new char[3][3];
+        assertEquals(expectedArray, board.grid);
     }
 
     @Test
     // Test number of players
     public void testNumberOfPlayers(){
         Board board = new Board();
-        assertEquals(1, board.players);
+        assertArrayEquals(1, board.players);
     }
 }
