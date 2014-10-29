@@ -22,7 +22,7 @@ public class Game{
         }
     }
 
-    þ// Insert a player's character at the correct place.
+    // Insert a player's character at the correct place.
     public void insert(int x, int y){
         if (board.players == 1){
             board.grid[x][y] = 'o';
