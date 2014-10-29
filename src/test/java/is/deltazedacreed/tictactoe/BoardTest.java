@@ -47,14 +47,14 @@ public class BoardTest{
     // Test if the game field prints out the values of the grid on the correct form
     public void testGameField(){
         Board board = new Board();
-        for (int i = 0; i < 3; i++){
-            int columnNr = 0;
-            for (int j = 0; j < 3; j++){
-                assertEquals('[', board.gameField.charAt(columnNr));
-                assertEquals(' ', board.gameField.charAt(++columnNr));
-                assertEquals(']', board.gameField.charAt(++columnNr));
+        for (int j = 0; j < 30; j++){
+            if (j == 9 || j == 19 || j == 29){
+                assertEquals('\n', board.gameField.charAt(j));
+            } else {
+                assertEquals('[', board.gameField.charAt(j));
+                assertEquals(' ', board.gameField.charAt(++j));
+                assertEquals(']', board.gameField.charAt(++j));
             }
-            assertEquals('/n', board.gameField.charAt(++columnNr));
         }
     }
 }
