@@ -15,24 +15,22 @@ public class GameTest{
     @Test
     public void testChangePlayer(){
         Game game = new Game();
-        Board board = new Board();
-        game.changePlayer(board);
-        assertEquals(2, board.players);
-        game.changePlayer(board);
-        assertEquals(1, board.players); 
+        game.changePlayer();
+        assertEquals(2, game.board.players);
+        game.changePlayer();
+        assertEquals(1, game.board.players); 
     }
 
     // Test if the insert function inserts the correct letter.
     @Test
     public void testInsert(){
         Game game = new Game();
-        Board board = new Board();
         game.insert(0, 1);
 
-        if(board.players == 1){
-            assertEquals('o', board.grid[0][1]);
+        if (game.board.players == 1){
+            assertEquals('o', game.board.grid[0][1]);
         } else {
-            assertEquals('x', board.grid[0][1]);
+            assertEquals('x', game.board.grid[0][1]);
         }
     }
 }
