@@ -44,7 +44,7 @@ public class BoardTest{
     }
 
     @Test
-    // Test if the game field prints out the values of the grid on the correct form
+    // Test if the game field prints out the whitespaces of the grid on the correct form
     public void testGameField(){
         Board board = new Board();
         for (int j = 0; j < 30; j++){
