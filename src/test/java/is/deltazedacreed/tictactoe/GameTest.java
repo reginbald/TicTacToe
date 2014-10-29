@@ -53,4 +53,15 @@ public class GameTest{
             column++;
         }
     }
+
+    @Test
+    // Make sure the input is correct
+    public void testInput(){
+        Game game = new Game();
+        for (int i = 0; i < 3; i++){
+            for (int j = 0; j < 3; j++){
+                assertTrue(game.input(i, j));
+            }
+       }
+    }
 }
