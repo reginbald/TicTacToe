@@ -12,11 +12,10 @@ import org.junit.Test;
 public class BoardTest{
 
     @Test
-    // Test size of grid
-    public void testGridSize(){
+    // Test number of rows of grid
+    public void testGridRows(){
         Board board = new Board();
-        char[][] expectedArray = new char[3][3];
-        assertArrayEquals(expectedArray, board.grid);
+        assertEquals(3, board.grid[0].length);
     }
 
     @Test
