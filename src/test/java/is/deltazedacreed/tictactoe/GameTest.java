@@ -11,7 +11,7 @@ import org.junit.Test;
  */
 public class GameTest{
 
-    // Test the changePlayer function.
+    // Test if changePlayer function swiches to correct player.
     @Test
     public void testChangePlayer(){
         Game game = new Game();
