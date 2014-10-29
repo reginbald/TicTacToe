@@ -32,9 +32,9 @@ public class GameTest{
         int row = 0;
 
         game.insert(0, 1);
-        game.changePlayer();
+        game.board.changePlayers();
         game.insert(0, 2);
-        game.changePlayer();
+        game.board.changePlayers();
         game.insert(2, 2);
 
         StringBuilder test = game.board.writeGameField();
