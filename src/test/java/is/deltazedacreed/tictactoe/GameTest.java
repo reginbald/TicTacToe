@@ -11,16 +11,6 @@ import org.junit.Test;
  */
 public class GameTest{
 
-    // Test if changePlayer function swiches to correct player.
-    @Test
-    public void testChangePlayer(){
-        Game game = new Game();
-        game.changePlayer();
-        assertEquals(2, game.board.players);
-        game.changePlayer();
-        assertEquals(1, game.board.players); 
-    }
-
     // Test if the insert function inserts the correct letter.
     @Test
     public void testInsert(){
@@ -42,9 +32,9 @@ public class GameTest{
         int row = 0;
 
         game.insert(0, 1);
-        game.changePlayer();
+        game.board.changePlayers();
         game.insert(0, 2);
-        game.changePlayer();
+        game.board.changePlayers();
         game.insert(2, 2);
 
         StringBuilder test = game.board.writeGameField();

@@ -33,6 +33,25 @@ public class BoardTest{
     }
 
     @Test
+    // Test if changePlayer function swiches to correct player.
+    public void testChangePlayer(){
+        Board board = new Board();
+        board.changePlayer();
+        assertEquals(2, board.players);
+        board.changePlayer();
+        assertEquals(1, board.players); 
+    }
+
+    @Test
+    // Test if player is initialized.
+    public void testInitializePlayer(){
+        Board board = new Board();
+        board.changePlayers();
+        board.initializePlayer();
+        assertEquals(1, board.players);
+    }
+
+    @Test
     // Test if grid is empty, that is, each grid square is a whitespace.
     public void testGridIsEmpty(){
         Board board = new Board();
