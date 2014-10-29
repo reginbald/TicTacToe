@@ -50,7 +50,7 @@ public class BoardTest{
         int column = 0;
         int row = 0;
 
-        StringBuilder test = board.gameField;
+        StringBuilder test = board.writeGameField();
 
         for (int j = 0; j < 30; j = j + 3){
             if (j == 9 || j == 19 || j == 29){
