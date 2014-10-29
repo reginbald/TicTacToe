@@ -47,14 +47,23 @@ public class BoardTest{
     // Test if the game field prints out the whitespaces of the grid on the correct form
     public void testGameField(){
         Board board = new Board();
-        for (int j = 0; j < 30; j++){
+        int column = 0;
+        int row = 0;
+
+        StringBuilder test = board.gameField;
+
+        for (int j = 0; j < 30; j = j + 3){
             if (j == 9 || j == 19 || j == 29){
-                assertEquals('\n', board.gameField.charAt(j));
+                j++;
+                row++;
+                column = 0;
+                // assertEquals('\n', test.charAt(j));
             } else {
-                assertEquals('[', board.gameField.charAt(j));
-                assertEquals(' ', board.gameField.charAt(++j));
-                assertEquals(']', board.gameField.charAt(++j));
+                assertEquals('[', test.charAt(j));
+                assertEquals(board.grid[row][column], test.charAt(j + 1));
+                assertEquals(']', test.charAt(j + 2));
             }
+            column++;
         }
     }
 }
