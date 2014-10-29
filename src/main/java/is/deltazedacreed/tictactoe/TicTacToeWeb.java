@@ -12,7 +12,8 @@ import spark.servlet.SparkApplication;
  */
 public class TicTacToeWeb implements SparkApplication{
     public static void main(String[] args){
-        SparkApplication tictactoeweb = new TicTacToeWeb();
+        staticFileLocation("/public");
+	SparkApplication tictactoeweb = new TicTacToeWeb();
         String port = System.getenv("PORT");
         if (port != null) {
             setPort(Integer.valueOf(port));
