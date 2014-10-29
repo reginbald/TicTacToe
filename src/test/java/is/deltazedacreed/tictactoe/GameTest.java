@@ -60,7 +60,7 @@ public class GameTest{
         Game game = new Game();
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
-                assertTrue(game.isValidInput(i, j));
+                assertEquals(true, game.isValidInput(i, j));
             }
        }
     }
