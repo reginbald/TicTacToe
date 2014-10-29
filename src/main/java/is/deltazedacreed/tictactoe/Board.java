@@ -9,13 +9,14 @@ public class Board{
 
     public static char grid[][];
     public static int players;
-    public static string gameField;
+    public static StringBuilder gameField;
 
     // Constructor
     public Board(){
         grid = new char[3][3];
         players = 1;
         initializeGrid();
+        gameField = new StringBuilder();
         gameField = writeGameField();
     }
 
@@ -29,13 +30,13 @@ public class Board{
     }
 
     // Initialize game field.
-    public String writeGameField(){
-        StringBuilder strBuilder = new StringBuilder();
+    public StringBuilder writeGameField(){
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
-                strBuilder.append("[" + grid[i][j] + "]");
+                gameField.append("[" + grid[i][j] + "]");
             }
-            strBuilder.append("\n");
+            gameField.append("\n");
         }
+        return gameField;
     }
 }
