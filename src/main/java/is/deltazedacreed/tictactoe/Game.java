@@ -23,6 +23,14 @@ public class Game{
         }
     }
 
+    // Check if input is valid.
+    private boolean isValidInput(int x, int y){
+        if(x >= 0 && x <= 2 && y >= 0 && y <= 2){
+            return true;
+        }
+        return false;
+    }
+
     public static void main(String[] args){
 
     }
