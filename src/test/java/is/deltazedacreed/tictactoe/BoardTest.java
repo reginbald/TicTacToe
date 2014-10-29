@@ -18,6 +18,7 @@ public class BoardTest{
         assertEquals(3, board.grid[0].length);
     }
 
+    @Test
     // Test number of rows of grid
     public void testGridRows(){
         Board board = new Board();
