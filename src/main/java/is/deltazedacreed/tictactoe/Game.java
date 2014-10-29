@@ -18,6 +18,8 @@ public class Game{
     public void changePlayer(){
         if (board.players == 1){
             board.players = 2;
+        } else {
+            board.players = 1;
         }
     }
 
