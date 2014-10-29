@@ -1,14 +1,21 @@
+/*
+ * Copyright (c) 2014 Delta Zeda Creed.
+ */
+
 package is.deltazedacreed.tictactoe;
 
-import java.util.regex.Pattern;
-import java.util.concurrent.TimeUnit;
-import org.junit.*;
-import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
+import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
+import java.util.concurrent.TimeUnit;
+import java.util.regex.Pattern;
 
+/**
+ * Class for testing TicTacToeWeb with Selenium.
+ */
 public class TicTacToeWebTest {
   private WebDriver driver;
   private String baseUrl;
