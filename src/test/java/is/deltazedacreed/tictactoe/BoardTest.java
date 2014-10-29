@@ -10,5 +10,10 @@ import org.junit.Test;
  * Class constructor that tests the class Board.
  */
 public class BoardTest{
-    
+
+    @Test
+    public void testGridSize(){
+        Board board = new Board();
+        assertEquals(9, board.grid.length);
+    }
 }
