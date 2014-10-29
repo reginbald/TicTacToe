@@ -13,15 +13,13 @@ import org.junit.Test;
 public class GameTest{
     //
     @Test
-    public void testChangePlayer() {
-    	Game test = new Game();
-    	test.players = 1;
-    	test.changePlayer();
-    	assertEquals(2, test.players);
-    	test.changePlayer();
-    	assertEquals(1, test.players); 
-   	}
-
-
+    public void testChangePlayer(){
+        Game test = new Game();
+        Board board = new Board();
+        test.changePlayer(board);
+        assertEquals(2, board.players);
+        test.changePlayer(board);
+        assertEquals(1, board.players); 
+       }
 
 }
