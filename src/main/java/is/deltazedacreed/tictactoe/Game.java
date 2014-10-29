@@ -22,6 +22,14 @@ public class Game{
         }
     }
 
+    þ// Insert a player's character at the correct place.
+    public void insert(int x, int y){
+        if (board.players == 1){
+            board.grid[x][y] = 'o';
+        } else {
+            board.grid[x][y] = 'x';
+        }
+    }
 
     public static void main(String[] args){
 
