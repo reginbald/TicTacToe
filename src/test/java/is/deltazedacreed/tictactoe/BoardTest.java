@@ -31,4 +31,15 @@ public class BoardTest{
         Board board = new Board();
         assertEquals(1, board.players);
     }
+
+    @Test
+    // Test if grid is empty, that is, each grid square is a whitespace.
+    public void testGridIsEmpty(){
+        Board board = new Board();
+        for(int i = 0Ã; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                assertEquals(' ', board.grid[i][j]);
+            }
+        }
+    }
 }
