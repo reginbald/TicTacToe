@@ -54,10 +54,10 @@ public class BoardTest{
 
         for (int j = 0; j < 30; j = j + 3){
             if (j == 9 || j == 19 || j == 29){
+                assertEquals('\n', test.charAt(j));
                 j++;
                 row++;
                 column = 0;
-                // assertEquals('\n', test.charAt(j));
             } else {
                 assertEquals('[', test.charAt(j));
                 assertEquals(board.grid[row][column], test.charAt(j + 1));
