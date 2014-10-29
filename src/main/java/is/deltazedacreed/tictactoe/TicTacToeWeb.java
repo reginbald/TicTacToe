@@ -21,10 +21,10 @@ public class TicTacToeWeb implements SparkApplication{
     }
 
     public void init(){
-        post(new Route("/"){
+        get(new Route("/"){
             @Override
             public Object handle(Request request, Response response){
-                return "HelloWorld";
+                return "Hello world!";
             }
         });
     }
