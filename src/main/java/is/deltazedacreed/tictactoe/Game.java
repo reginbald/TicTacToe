@@ -13,7 +13,12 @@ public class Game{
     public Game(){
         board = new Board();
     }
+<<<<<<< HEAD
+
+    // Determines which player's turn it is.
+=======
     // Changes player, if player 1 is currently playing, the function switches to player 2
+>>>>>>> ff575249a2ee9e8865eeb2b6734f9567cb45ca8d
     public void changePlayer(){
         if (board.players == 1){
             board.players = 2;

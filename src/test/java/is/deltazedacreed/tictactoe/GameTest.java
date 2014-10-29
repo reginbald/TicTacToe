@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
- * Class constructor that tests the class Game.
+ * Class that tests the class Game.
  */
 public class GameTest{
 
@@ -40,17 +40,27 @@ public class GameTest{
         Game game = new Game();
         int column = 0;
         int row = 0;
-        for (int j = 0; j < 30; j++){
+
+        game.insert(0, 1);
+        game.changePlayer();
+        game.insert(0, 2);
+        game.changePlayer();
+        game.insert(2, 2);
+
+        StringBuilder test = game.board.writeGameField();
+
+        for (int j = 0; j < 30; j = j + 3){
             if (j == 9 || j == 19 || j == 29){
+                assertEquals('\n', test.charAt(j));
+                j++;
                 row++;
                 column = 0;
-                assertEquals('\n', game.board.gameField.charAt(j));
             } else {
-                assertEquals('[', game.board.gameField.charAt(j));
-                assertEquals(game.board.grid[row][column], game.board.gameField.charAt(++j));
-                assertEquals(']', game.board.gameField.charAt(++j));
-                column++;
+                assertEquals('[', test.charAt(j));
+                assertEquals(game.board.grid[row][column], test.charAt(j + 1));
+                assertEquals(']', test.charAt(j + 2));
             }
+            column++;
         }
     }
 }

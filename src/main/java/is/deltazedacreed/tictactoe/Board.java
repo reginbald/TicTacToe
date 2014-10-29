@@ -9,15 +9,12 @@ public class Board{
 
     public static char grid[][];
     public static int players;
-    public static StringBuilder gameField;
 
     // Constructor
     public Board(){
         grid = new char[3][3];
         players = 1;
         initializeGrid();
-        gameField = new StringBuilder();
-        gameField = writeGameField();
     }
 
     // Initialize grid. Insert whitespaces in every grid square.
@@ -30,7 +27,9 @@ public class Board{
     }
 
     // Initialize game field.
-    private StringBuilder writeGameField(){
+    public StringBuilder writeGameField(){
+        StringBuilder gameField = new StringBuilder();
+
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
                 gameField.append("[" + grid[i][j] + "]");
