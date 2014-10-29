@@ -40,7 +40,7 @@ public class Board{
     }
 
     // Changes player, if player 1 is currently playing, the function switches to player 2
-    public void changePlayer(){
+    public void changePlayers(){
         if (players == 1){
             players = 2;
         } else {
