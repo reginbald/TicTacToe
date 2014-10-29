@@ -33,4 +33,24 @@ public class GameTest{
             assertEquals('x', game.board.grid[0][1]);
         }
     }
+
+    // Test if the characters are inserted at the correct places
+    @Test
+    public void testInsertedGameField(){
+        Game game = new Game();
+        int column = 0;
+        int row = 0;
+        for (int j = 0; j < 30; j++){
+            if (j == 9 || j == 19 || j == 29){
+                row++;
+                column = 0;
+                assertEquals('\n', game.board.gameField.charAt(j));
+            } else {
+                assertEquals('[', game.board.gameField.charAt(j));
+                assertEquals(game.board.grid[row][column], game.board.gameField.charAt(++j));
+                assertEquals(']', game.board.gameField.charAt(++j));
+                column++;
+            }
+        }
+    }
 }
