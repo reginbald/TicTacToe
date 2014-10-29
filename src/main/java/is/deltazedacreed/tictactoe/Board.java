@@ -30,7 +30,7 @@ public class Board{
     }
 
     // Initialize game field.
-    private StringBuilder writeGameField(){
+    public StringBuilder writeGameField(){
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
                 gameField.append("[" + grid[i][j] + "]");
