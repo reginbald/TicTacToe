@@ -12,8 +12,16 @@ import org.junit.Test;
 public class BoardTest{
 
     @Test
+    // Test size of grid
     public void testGridSize(){
         Board board = new Board();
         assertEquals(9, board.grid.length);
+    }
+
+    @Test
+    // Test number of players
+    public void testNumberOfPlayers(){
+        Board board = new Board();
+        assertEquals(1, board.players);
     }
 }
