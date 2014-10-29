@@ -40,6 +40,13 @@ public class GameTest{
         Game game = new Game();
         int column = 0;
         int row = 0;
+
+        game.insert(0,1)
+        game.changePlayer();
+        game.insert(0,3);
+        game.changePlayer();
+        game.insert(3,3);
+
         for (int j = 0; j < 30; j++){
             if (j == 9 || j == 19 || j == 29){
                 row++;
