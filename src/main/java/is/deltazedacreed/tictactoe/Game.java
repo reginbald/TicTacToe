@@ -31,6 +31,16 @@ public class Game{
         return false;
     }
 
+    // Check if there's a row with the same characters
+    public static boolean winRow(){
+        for (int i = 0; i < 3; i++){
+            if (grid[i][0] != ' ' && grid[i][0] == grid[i][1] && grid[i][1] == grid[i][2]){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args){
 
     }
