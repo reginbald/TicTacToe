@@ -146,7 +146,7 @@ public class GameTest{
                 game.insert(i, j);
             }
             game.board.changePlayers();
-            game.insert(i, j + 1);
+            game.insert(i, 2);
         }
         assertEquals(true, game.tie());
     }
