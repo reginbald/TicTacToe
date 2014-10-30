@@ -70,9 +70,9 @@ public class GameTest{
     public void testWinRow(){
         Game game = new Game();
 
+        game.insert(0, 0);
         game.insert(0, 1);
         game.insert(0, 2);
-        game.insert(0,3);
         assertEquals(true, game.winRow());
     }
 }
