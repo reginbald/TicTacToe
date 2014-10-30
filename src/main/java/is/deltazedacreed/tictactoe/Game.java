@@ -59,6 +59,29 @@ public class Game{
         return false;
     }
 
+    // check if there's a diagonal line with the same charachters
+    public static boolean winCross(){
+        if (board.grid[1][1] == ' '){
+            return false;
+        } else {
+            if (board.grid[0][0] == board.grid[1][1] && board.grid[1][1] == board.grid[2][2]){
+                return true;
+            } else {
+                if (board.grid[0][2] == board.grid[1][1] && board.grid[1][1] == board.grid[2][0]){
+                return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    // Check if someone has won
+    public static boolean winner(){
+        if (winColumn() || winRow() || winCross()){
+            return true;
+        }
+        return false;
+    }
 
     public static void main(String[] args){
 
