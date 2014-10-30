@@ -9,28 +9,34 @@ import java.util.Scanner;
  */
 public class Game{
 
-    public static Board board;
+    private static Board board;
     public static boolean playAgain;
+    public static StringBuilder gameField;
+	private static Scanner scanInt;
+	private static Scanner scanString;
 
     // Constructor
     public Game(){
-        board = new Board();
+        setBoard(new Board());
         playAgain = true;
+        gameField = new StringBuilder();
+        scanInt = new Scanner(System.in);
+        scanString = new Scanner(System.in);
     }
 
     // Insert a player's character at the correct place.
     public void insert(int x, int y){
-        if (board.players == 1){
-            board.grid[x][y] = 'o';
+        if (Board.getPlayers() == 1){
+        	Board.getGrid()[x][y] = 'o';
         } else {
-            board.grid[x][y] = 'x';
+        	Board.getGrid()[x][y] = 'x';
         }
     }
 
     // Check if input is valid.
     public static boolean isValidInput(int x, int y){
         if (x >= 0 && x <= 2 && y >= 0 && y <= 2){
-            if (board.grid[x][y] == ' ') {
+            if (Board.getGrid()[x][y] == ' ') {
                 return true;
             }
         }
@@ -40,10 +46,10 @@ public class Game{
     // Check if there's a row with the same characters
     public static boolean winRow(){
         for (int i = 0; i < 3; i++){
-            if (board.grid[0][i] == ' '){
+            if (Board.getGrid()[0][i] == ' '){
                 break;
             } else {
-                if (board.grid[0][i] == board.grid[1][i] && board.grid[1][i] == board.grid[2][i]){
+                if (Board.getGrid()[0][i] == Board.getGrid()[1][i] && Board.getGrid()[1][i] == Board.getGrid()[2][i]){
                     return true;
                 }
             }
@@ -54,10 +60,10 @@ public class Game{
     // Check if there's a column with the same characters
     public static boolean winColumn(){
         for (int i = 0; i < 3; i++){
-            if (board.grid[i][0] == ' '){
+            if (Board.getGrid()[i][0] == ' '){
                 break;
             } else {
-                if (board.grid[i][0] == board.grid[i][1] && board.grid[i][1] == board.grid[i][2]){
+                if (Board.getGrid()[i][0] == Board.getGrid()[i][1] && Board.getGrid()[i][1] == Board.getGrid()[i][2]){
                     return true;
                 }
             }
@@ -67,13 +73,13 @@ public class Game{
 
     // check if there's a diagonal line with the same charachters
     public static boolean winCross(){
-        if (board.grid[1][1] == ' '){
+        if (Board.getGrid()[1][1] == ' '){
             return false;
         } else {
-            if (board.grid[0][0] == board.grid[1][1] && board.grid[1][1] == board.grid[2][2]){
+            if (Board.getGrid()[0][0] == Board.getGrid()[1][1] && Board.getGrid()[1][1] == Board.getGrid()[2][2]){
                 return true;
             } else {
-                if (board.grid[0][2] == board.grid[1][1] && board.grid[1][1] == board.grid[2][0]){
+                if (Board.getGrid()[0][2] == Board.getGrid()[1][1] && Board.getGrid()[1][1] == Board.getGrid()[2][0]){
                 return true;
                 }
             }
@@ -93,7 +99,7 @@ public class Game{
     public static boolean tie(){
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
-                if (board.grid[i][j] == ' '){
+                if (Board.getGrid()[i][j] == ' '){
                     return false;
                 }
             }
@@ -104,8 +110,6 @@ public class Game{
     // Main function that runs the game
     public static void main(String[] args){
         Game game = new Game();
-        Scanner scanner = new Scanner(System.in);
-        StringBuilder gameField = new StringBuilder();
         int x;
         int y;
 
@@ -114,18 +118,18 @@ public class Game{
         
         while (playAgain){
             // While the game hasn't ended yet
-            while (!game.winner() && !game.tie()){
+            while (!Game.winner() && !Game.tie()){
                 System.out.println(gameField.toString());
-                System.out.print("Player " + board.players);
+                System.out.print("Player " + Board.getPlayers());
                 System.out.println(": Where do you want to insert? (row column)");
-                x = scanner.nextInt();
-                y = scanner.nextInt();
+                x = scanInt.nextInt();
+                y = scanInt.nextInt();
                 
                 // Insert if input is valid
-                if (game.isValidInput(x, y)){
+                if (Game.isValidInput(x, y)){
                     game.insert(x, y);
-                    gameField = game.board.writeGameField();
-                    game.board.changePlayers();
+                    gameField = Game.getBoard().writeGameField();
+                    Game.getBoard().changePlayers();
                 } else {
                     System.out.println("Location is not valid. Please try again.");
                 }
@@ -134,25 +138,32 @@ public class Game{
             System.out.println(gameField.toString());
 
             // Check whether someone has won or if there's a tie
-            if (game.winner()){
-                System.out.println("Player" + board.players + " wins!");
+            if (Game.winner()){
+                System.out.println("Player" + Board.getPlayers() + " wins!");
             } else {
                 System.out.println("It's a tie!");
             }
             
-            // Check if the game should be played again
-            Scanner scan = new Scanner(System.in);
+            scanString = new Scanner(System.in);
             System.out.println("Do you want to play again? yes/no");
-            String answer = scan.nextLine();
+            String answer = scanString.nextLine();
             if (answer.equals("no")){
                 playAgain = false;
                 return;
             }
             
             // Initialize the game for a new game
-            game.board.initializePlayer();
-            game.board.initializeGrid();
-            gameField = game.board.writeGameField();
+            Game.getBoard().initializePlayer();
+		    Board.initializeGrid();
+            gameField = Game.getBoard().writeGameField();
         }
+    }
+
+    public static Board getBoard() {
+        return board;
+    }
+
+    public static void setBoard(Board board) {
+        Game.board = board;
     }
 }
