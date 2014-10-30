@@ -53,4 +53,26 @@ public class GameTest{
             column++;
         }
     }
+
+    @Test
+    // Make sure the input is correct
+    public void testInput(){
+        Game game = new Game();
+        for (int i = 0; i < 3; i++){
+            for (int j = 0; j < 3; j++){
+                assertEquals(true, game.isValidInput(i, j));
+            }
+       }
+    }
+
+    @Test
+    // Check the WinRow function
+    public void testWinRow(){
+        Game game = new Game();
+
+        game.insert(0, 0);
+        game.insert(0, 1);
+        game.insert(0, 2);
+        assertEquals(true, game.winRow());
+    }
 }

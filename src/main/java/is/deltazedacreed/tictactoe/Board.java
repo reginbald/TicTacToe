@@ -48,6 +48,7 @@ public class Board{
         }
     }
 
+    // Initialize who's turn it is when the game is played again.
     public void initializePlayer(){
         if (players == 2){
             players = 1;
