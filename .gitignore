@@ -1,6 +1,15 @@
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trash*
+Icon?
+ethumbs.db
+Thumbs.db
+*.tmp
+
+# Gradle files
 .gradle
 build/
-
-# Ignore Gradle GUI config
 gradle-app.setting
-.DS_STORE

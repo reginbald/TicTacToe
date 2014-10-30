@@ -34,11 +34,11 @@ public class BoardTest{
 
     @Test
     // Test if changePlayer function swiches to correct player.
-    public void testChangePlayer(){
+    public void testChangePlayers(){
         Board board = new Board();
-        board.changePlayer();
+        board.changePlayers();
         assertEquals(2, board.players);
-        board.changePlayer();
+        board.changePlayers();
         assertEquals(1, board.players); 
     }
 

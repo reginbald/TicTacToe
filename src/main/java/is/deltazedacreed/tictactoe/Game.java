@@ -25,7 +25,7 @@ public class Game{
 
     // Check if input is valid.
     public static boolean isValidInput(int x, int y){
-        if (x >= 0 && x <= 2 && y >= 0 && y <= 2){
+        if (board.grid[x][y] == ' ' && x >= 0 && x <= 2 && y >= 0 && y <= 2){
             return true;
         }
         return false;
@@ -34,6 +34,20 @@ public class Game{
     // Check if there's a row with the same characters
     public static boolean winRow(){
         for (int i = 0; i < 3; i++){
+            if (board.grid[0][i] == ' '){
+                break;
+            } else {
+                if (board.grid[0][i] == board.grid[0][i] && board.grid[0][i] == board.grid[0][i]){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    // Check if there's a column with the same characters
+    public static boolean winColumn(){
+        for (int i = 0; i < 3; i++){
             if (board.grid[i][0] == ' '){
                 break;
             } else {
@@ -41,6 +55,30 @@ public class Game{
                     return true;
                 }
             }
+        }
+        return false;
+    }
+
+    // check if there's a diagonal line with the same charachters
+    public static boolean winCross(){
+        if (board.grid[1][1] == ' '){
+            return false;
+        } else {
+            if (board.grid[0][0] == board.grid[1][1] && board.grid[1][1] == board.grid[2][2]){
+                return true;
+            } else {
+                if (board.grid[0][2] == board.grid[1][1] && board.grid[1][1] == board.grid[2][0]){
+                return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    // Check if someone has won
+    public static boolean winner(){
+        if (winColumn() || winRow() || winCross()){
+            return true;
         }
         return false;
     }
