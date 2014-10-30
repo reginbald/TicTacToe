@@ -10,5 +10,12 @@ TicTacToe
 
 [**Staging/Production Environment**](http://tictactoe420.herokuapp.com/) **|** [**Continuous Integration Server**](https://magnum.travis-ci.com/reginbald/TicTacToe)
 
+## Code coverage report instructions:
+To generate a code coverage report use the command "./bin/code_coverage" without the quotation marks.
+Use python -m SimpleHTTPServer 8080 within the folder "build/JacocoReport/jacocoHtml" to see the report in a browser.
+You should be able to see the report in the your browser at http://46.149.21.194:8080/.
+If there is an error pick another port to use from 4567 to 4575.
+
+
 ## TODO:
 - [TODO](/docs/TODO.md)
