@@ -7,21 +7,21 @@ package is.deltazedacreed.tictactoe;
  */
 public class Board{
 
-    public static char grid[][];
-    public static int players;
+    private static char grid[][];
+    private static int players;
 
     // Constructor
     public Board(){
-        grid = new char[3][3];
-        players = 1;
+        setGrid(new char[3][3]);
+        setPlayers(1);
         initializeGrid();
     }
 
     // Initialize grid. Insert whitespaces in every grid square.
-    public void initializeGrid(){
+    public static void initializeGrid(){
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
-                grid[i][j] = ' ';
+                getGrid()[i][j] = ' ';
             }
         }
     }
@@ -32,7 +32,7 @@ public class Board{
 
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
-                gameField.append("[" + grid[i][j] + "]");
+                gameField.append("[" + getGrid()[i][j] + "]");
             }
             gameField.append("\n");
         }
@@ -41,17 +41,33 @@ public class Board{
 
     // Changes player, if player 1 is currently playing, the function switches to player 2
     public void changePlayers(){
-        if (players == 1){
-            players = 2;
+        if (getPlayers() == 1){
+            setPlayers(2);
         } else {
-            players = 1;
+            setPlayers(1);
         }
     }
 
     // Initialize who's turn it is when the game is played again.
     public void initializePlayer(){
-        if (players == 2){
-            players = 1;
+        if (getPlayers() == 2){
+            setPlayers(1);
         }
+    }
+
+    public static int getPlayers() {
+        return players;
+    }
+
+    public static void setPlayers(int players) {
+        Board.players = players;
+    }
+
+    public static char[][] getGrid() {
+        return grid;
+    }
+
+    public static void setGrid(char grid[][]) {
+        Board.grid = grid;
     }
 }
