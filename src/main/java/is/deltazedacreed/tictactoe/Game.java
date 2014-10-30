@@ -34,8 +34,12 @@ public class Game{
     // Check if there's a row with the same characters
     public static boolean winRow(){
         for (int i = 0; i < 3; i++){
-            if (grid[i][0] != ' ' && grid[i][0] == grid[i][1] && grid[i][1] == grid[i][2]){
-                return true;
+            if (board.grid[i][0] == ' '){
+                break;
+            } else {
+                if (board.grid[i][0] == board.grid[i][1] && board.grid[i][1] == board.grid[i][2]){
+                    return true;
+                }
             }
         }
         return false;
