@@ -69,7 +69,7 @@ public class GameTest{
     // Test if input is out of range
     public void testOutOfRangeInput(){
         Game game = new Game();
-        assertEquals(false, game.isValidInput(0, 3);
+        assertEquals(false, game.isValidInput(0, 3));
     }
 
     @Test
