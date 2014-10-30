@@ -25,7 +25,7 @@ public class Game{
 
     // Check if input is valid.
     public static boolean isValidInput(int x, int y){
-        if (x >= 0 && x <= 2 && y >= 0 && y <= 2){
+        if (board.grid[x][y] == ' ' && x >= 0 && x <= 2 && y >= 0 && y <= 2){
             return true;
         }
         return false;
@@ -33,6 +33,20 @@ public class Game{
 
     // Check if there's a row with the same characters
     public static boolean winRow(){
+        for (int i = 0; i < 3; i++){
+            if (board.grid[0][i] == ' '){
+                break;
+            } else {
+                if (board.grid[0][i] == board.grid[0][i] && board.grid[0][i] == board.grid[0][i]){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    // Check if there's a column with the same characters
+    public static boolean winColumn(){
         for (int i = 0; i < 3; i++){
             if (board.grid[i][0] == ' '){
                 break;
@@ -44,6 +58,7 @@ public class Game{
         }
         return false;
     }
+
 
     public static void main(String[] args){
 
