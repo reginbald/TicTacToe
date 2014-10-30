@@ -15,21 +15,21 @@ public class BoardTest{
     // Test number of columns of grid
     public void testGridColumns(){
         Board board = new Board();
-        assertEquals(3, board.grid[0].length);
+        assertEquals(3, board.getGrid()[0].length);
     }
 
     @Test
     // Test number of rows of grid
     public void testGridRows(){
         Board board = new Board();
-        assertEquals(3, board.grid.length);
+        assertEquals(3, board.getGrid().length);
     }
 
     @Test
     // Test number of players
     public void testNumberOfPlayers(){
         Board board = new Board();
-        assertEquals(1, board.players);
+        assertEquals(1, board.getPlayers());
     }
 
     @Test
@@ -37,9 +37,9 @@ public class BoardTest{
     public void testChangePlayers(){
         Board board = new Board();
         board.changePlayers();
-        assertEquals(2, board.players);
+        assertEquals(2, board.getPlayers());
         board.changePlayers();
-        assertEquals(1, board.players); 
+        assertEquals(1, board.getPlayers()); 
     }
 
     @Test
@@ -48,7 +48,7 @@ public class BoardTest{
         Board board = new Board();
         board.changePlayers();
         board.initializePlayer();
-        assertEquals(1, board.players);
+        assertEquals(1, board.getPlayers());
     }
 
     @Test
@@ -57,7 +57,7 @@ public class BoardTest{
         Board board = new Board();
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
-                assertEquals(' ', board.grid[i][j]);
+                assertEquals(' ', board.getGrid()[i][j]);
             }
         }
     }
