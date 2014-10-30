@@ -112,6 +112,24 @@ public class GameTest{
     }
 
     @Test
+    // check if wincross gives true when it shouldn't
+    public void testNoWinCross(){
+        Game game = new Game();
+        game.insert(0, 0);
+        game.insert(0, 1);
+        game.insert(0, 2);
+        assertEquals(false, game.winCross());
+    }
+
+    @Test
+    // check if wincross returns false if the board is empty
+    public void testEmptyWinCross(){
+        Game game = new Game();
+        assertEquals(false, game.winCross());
+    }
+
+
+    @Test
     // Check if the winner function gets that someone has won a row
     public void testRowWinner(){
         Game game = new Game();
