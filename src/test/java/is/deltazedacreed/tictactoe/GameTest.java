@@ -66,13 +66,22 @@ public class GameTest{
     }
 
     @Test
-    // Check the WinRow function
+    // Check the winRow function
     public void testWinRow(){
         Game game = new Game();
-
         game.insert(0, 0);
         game.insert(0, 1);
         game.insert(0, 2);
         assertEquals(true, game.winRow());
+    }
+
+    @Test
+    // Check the winColun function
+    public void testWinColumn(){
+        Game game = new Game();
+        game.insert(0, 0);
+        game.insert(1, 0);
+        game.insert(2, 0);
+        assertEquals(true, game.winColumn());
     }
 }
