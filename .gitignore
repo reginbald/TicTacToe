@@ -11,5 +11,6 @@ Thumbs.db
 
 # Gradle files
 build/
+.gradle/
 tmp/
 gradle-app.setting
