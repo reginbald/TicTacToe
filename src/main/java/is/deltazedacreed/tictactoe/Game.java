@@ -12,8 +12,8 @@ public class Game{
     private static Board board;
     public static boolean playAgain;
     public static StringBuilder gameField;
-	private static Scanner scanInt;
-	private static Scanner scanString;
+    private static Scanner scanInt;
+    private static Scanner scanString;
 
     // Constructor
     public Game(){
@@ -27,9 +27,9 @@ public class Game{
     // Insert a player's character at the correct place.
     public void insert(int x, int y){
         if (Board.getPlayers() == 1){
-        	Board.getGrid()[x][y] = 'o';
+            Board.getGrid()[x][y] = 'o';
         } else {
-        	Board.getGrid()[x][y] = 'x';
+            Board.getGrid()[x][y] = 'x';
         }
     }
 
@@ -48,8 +48,8 @@ public class Game{
         for (int i = 0; i < 3; i++){
             if (Board.getGrid()[0][i] == ' '){
                 break;
-            } else {
-                if (Board.getGrid()[0][i] == Board.getGrid()[1][i] && Board.getGrid()[1][i] == Board.getGrid()[2][i]){
+            } else if (Board.getGrid()[0][i] == Board.getGrid()[1][i]){ 
+                if (Board.getGrid()[1][i] == Board.getGrid()[2][i]){
                     return true;
                 }
             }
@@ -62,8 +62,8 @@ public class Game{
         for (int i = 0; i < 3; i++){
             if (Board.getGrid()[i][0] == ' '){
                 break;
-            } else {
-                if (Board.getGrid()[i][0] == Board.getGrid()[i][1] && Board.getGrid()[i][1] == Board.getGrid()[i][2]){
+            } else if (Board.getGrid()[i][0] == Board.getGrid()[i][1]){
+                if (Board.getGrid()[i][1] == Board.getGrid()[i][2]){
                     return true;
                 }
             }
@@ -75,13 +75,13 @@ public class Game{
     public static boolean winCross(){
         if (Board.getGrid()[1][1] == ' '){
             return false;
-        } else {
-            if (Board.getGrid()[0][0] == Board.getGrid()[1][1] && Board.getGrid()[1][1] == Board.getGrid()[2][2]){
+        } else if (Board.getGrid()[0][0] == Board.getGrid()[1][1]){
+            if (Board.getGrid()[1][1] == Board.getGrid()[2][2]){
                 return true;
-            } else {
-                if (Board.getGrid()[0][2] == Board.getGrid()[1][1] && Board.getGrid()[1][1] == Board.getGrid()[2][0]){
+            }
+        } else if (Board.getGrid()[0][2] == Board.getGrid()[1][1]){
+            if (Board.getGrid()[1][1] == Board.getGrid()[2][0]){
                 return true;
-                }
             }
         }
         return false;
@@ -154,7 +154,7 @@ public class Game{
             
             // Initialize the game for a new game
             Game.getBoard().initializePlayer();
-		    Board.initializeGrid();
+            Board.initializeGrid();
             gameField = Game.getBoard().writeGameField();
         }
     }
