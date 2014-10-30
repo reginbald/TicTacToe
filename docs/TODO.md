@@ -10,7 +10,7 @@ TODO
 - [ ] Code inspection
 - [ ] Integrate database
 - [ ] Run focused integration or End-to-end tests (e.g. Selenium). It is necessary to run this on external staging server (e.g. Heroku). To run integration test the application needs to connect to external system e.g. database. To run end-to-end test the system needs to have GUI (e.g. webUI).
-- [ ] Use Automated Continuous Integration Server (e.g. Travis).
+- [x] Use Automated Continuous Integration Server (e.g. Travis).
 
 #Continuous Delivery. For each code change the CI server runs these steps:
 - [ ] Run build script (all targets)
