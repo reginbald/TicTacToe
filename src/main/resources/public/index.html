@@ -9,6 +9,39 @@
     <body>
         <div class="container">
             <h1>Tic Tac Toe</h1>
+            <form method="post" action="/id" class="form-inline" role="form">
+                <div class="form group">
+                    <input type="text" name="x-coord" id="x-coord placeholder="3">
+                    <input type="text" name="y-coord" id="y-coord placeholder="3">
+                </div>
+                <button type="submit">insert</button>
+            </form>
+            <hr>
+            <div id="results" class="alert alert-info">[ ][ ][ ]</div>
+            <hr>
         </div>
+        <!-- Load jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <!-- Use ajax to submit form, retrive joke and display on page -->
+        <script>
+        $(document).ready(function() {
+            var form = $('form');
+            form.submit(function( event ) {
+                var x-coord = $("#x-coord").val();
+                var y-coord = $("#y-coord").val();
+                $.ajax({
+                    type: form.attr('method'),
+                    url: form.attr('action'),
+                    data: 'id=' + x-coord + y-coord
+                }).done(function(game) {
+                    $('#results').html(game).attr('class', 'alert alert-success');
+                }).fail(function() {
+                    $('#results').html('error').attr('class', 'alert alert-danger');
+                });
+                event.preventDefault();
+            });
+        });
+        </script>
     </body>
 </html>
