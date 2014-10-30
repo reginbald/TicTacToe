@@ -17,7 +17,7 @@ TODO
 - [x] Run unit and integration tests (if you have integration tests)
 - [ ] Deploy on staging and run End-to-end tests.
 - [ ] Deploy to production server.
-- [ ] Only continue next step if previuous step is success
+- [x] Only continue next step if previuous step is success
 - [x] Generate feedback to developer
 
 - [ ] Something else ... Surprise me !!! 
