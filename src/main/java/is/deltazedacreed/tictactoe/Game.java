@@ -2,6 +2,8 @@
 
 package is.deltazedacreed.tictactoe;
 
+import java.util.Scanner;
+
 /**
  * Class that runs the game, TicTacToe.
  */
@@ -97,8 +99,59 @@ public class Game{
         return true;
     }
 
-
+    // Main function that runs the game
     public static void main(String[] args){
+        Game game = new Game();
+        Scanner scanner = new Scanner(System.in);
+        StringBuilder gameField = new StringBuilder();
+        int x;
+        int y;
+        boolean playAgain = true;
 
+        // Start the game
+        System.out.println("Welcome to the game TicTacToe!");
+        
+        while (playAgain){
+            // While the game hasn't ended yet
+            while (!game.winner() && !game.tie()){
+                System.out.println(gameField.toString());
+                System.out.print("Player " + board.players);
+                System.out.println(": Where do you want to insert? (row column)");
+                x = scanner.nextInt();
+                y = scanner.nextInt();
+                
+                // Insert if input is valid
+                if (game.isValidInput(x, y)){
+                    game.insert(x, y);
+                    gameField = game.board.writeGameField();
+                    game.board.changePlayers();
+                } else {
+                    System.out.println("Location is not valid. Please try again.");
+                }
+            }
+            
+            System.out.println(gameField.toString());
+
+            // Check whether someone has won or if there's a tie
+            if (game.winner()){
+                System.out.println("Player" + board.players + " wins!");
+            } else {
+                System.out.println("It's a tie!");
+            }
+            
+            // Check if the game should be played again
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Do you want to play again? yes/no");
+            String answer = scan.nextLine();
+            if (answer.equals("no")){
+                playAgain = false;
+                return;
+            }
+            
+            // Initialize the game for a new game
+            game.board.initializePlayer();
+            game.board.initializeGrid();
+            gameField = game.board.writeGameField();
+        }
     }
 }
