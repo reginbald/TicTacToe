@@ -69,7 +69,7 @@ public class GameTest{
     // Make sure that one can't insert into a non-empty grid square
     public void testInputWithNonEmptySquare(){
         Game game = new Game();
-        insert(0, 1)
+        game.insert(0, 1);
         assertEquals(false, game.isValidInput(0, 1));
     }
 
