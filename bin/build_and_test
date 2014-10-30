@@ -3,5 +3,6 @@
 ./bin/clean
 ./bin/compile
 ./bin/unit_test
+./bin/code_coverage
 ./bin/package
 ./bin/deploy
