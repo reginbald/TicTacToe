@@ -128,6 +128,13 @@ public class GameTest{
         assertEquals(false, game.winCross());
     }
 
+    @Test
+    // Check if winner function returns false when no one has won
+    public void testNoWinner(){
+        Game game = new Game();
+        game.insert(0, 1);
+        assertEquals(false, game.winner());
+    }
 
     @Test
     // Check if the winner function gets that someone has won a row
