@@ -26,19 +26,19 @@ public class TicTacToeWeb implements SparkApplication{
         post(new Route("/"){
             @Override
             public Object handle(Request request, Response response){
-                StringBuilder gameField = game.board.writeGameField();
+                StringBuilder gameField = game.getBoard().writeGameField();
                 return gameField;
             }
         });
         post(new Route("/id"){
             @Override
             public Object handle(Request request, Response response){
-                StringBuilder gameField = game.board.writeGameField();
+                StringBuilder gameField = new StringBuilder();
                 String[] coordinates = request.queryParams("id").split(" ");
                 Integer xCoord = Integer.valueOf(coordinates[0]);
                 Integer yCoord = Integer.valueOf(coordinates[1]);
                 game.insert(xCoord, yCoord);
-                gameField = game.board.writeGameField();
+                gameField = game.getBoard().writeGameField();
                 return gameField.toString();
             }
         });
