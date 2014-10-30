@@ -10,10 +10,12 @@ import java.util.Scanner;
 public class Game{
 
     public static Board board;
+    public static boolean playAgain;
 
     // Constructor
     public Game(){
         board = new Board();
+        playAgain = true;
     }
 
     // Insert a player's character at the correct place.
@@ -106,7 +108,6 @@ public class Game{
         StringBuilder gameField = new StringBuilder();
         int x;
         int y;
-        boolean playAgain = true;
 
         // Start the game
         System.out.println("Welcome to the game TicTacToe!");
