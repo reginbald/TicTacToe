@@ -113,4 +113,15 @@ public class GameTest{
         game.insert(0, 2);
         assertEquals(true, game.winner());
     }
+
+    @Test
+    // Check if the winner function gets that someone has won a column
+    public void testColWinner(){
+        Game game = new Game();
+        game.insert(0, 0);
+        game.insert(1, 0);
+        game.insert(2, 0);
+        assertEquals(true, game.winner());
+}
+
 }
