@@ -83,6 +83,19 @@ public class Game{
         return false;
     }
 
+    // Check if there's tie, that is no square left to insert.
+    public static boolean tie(){
+        for (int i = 0; i < 3; i++){
+            for (int j = 0; j < 3; j++){
+                if(board.grid[i][j] == ' '){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
     public static void main(String[] args){
 
     }
