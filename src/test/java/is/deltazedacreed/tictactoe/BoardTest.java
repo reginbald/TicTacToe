@@ -47,6 +47,7 @@ public class BoardTest{
     public void testInitializePlayer(){
         Board board = new Board();
         board.changePlayers();
+        assertEquals(2, board.players);
         board.initializePlayer();
         assertEquals(1, board.players);
     }
