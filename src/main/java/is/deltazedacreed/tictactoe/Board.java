@@ -18,7 +18,7 @@ public class Board{
     }
 
     // Initialize grid. Insert whitespaces in every grid square.
-    private void initializeGrid(){
+    public void initializeGrid(){
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
                 grid[i][j] = ' ';
