@@ -111,6 +111,20 @@ public class GameTest{
         assertEquals(true, game.winCross());
     }
 
+    public void testWinCross2(){
+        Game game = new Game();
+        game.insert(0, 2);
+        game.insert(1, 1);
+        game.insert(2, 0);
+        assertEquals(true, game.winCross());
+    }
+
+    public void testWinCross3(){
+        Game game = new Game();
+        game.insert(1, 1);
+        assertEquals(false, game.winCross());
+    }
+
     @Test
     // check if wincross gives true when it shouldn't
     public void testNoWinCross(){
