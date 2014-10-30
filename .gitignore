@@ -10,7 +10,7 @@ Thumbs.db
 *.tmp
 
 # Gradle files
-.gradle
 build/
+.gradle/
 tmp/
 gradle-app.setting
