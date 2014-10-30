@@ -133,4 +133,21 @@ public class GameTest{
         game.insert(2, 2);
         assertEquals(true, game.winner());
     }
+
+    @Test
+    // Check if there's tie
+    // o o x
+    // x x o
+    // o o x
+    public void testTie(){ 
+        Game game = new Game();
+        for (int i = 0; i < 3; i++){
+            for (int j = 0; j < 2; j++){
+                game.insert(i, j);
+            }
+            game.board.changePlayers();
+            game.insert(i, j + 1);
+        }
+        assertEquals(true, game.tie());
+    }
 }
