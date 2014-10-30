@@ -3,6 +3,7 @@
 
 TicTacToe
 =========
+**Current build status:** [![Build Status](https://magnum.travis-ci.com/reginbald/TicTacToe.svg?token=smJBtwwwueA4GzzDEnsz&branch=master)](https://magnum.travis-ci.com/reginbald/TicTacToe)
 Simple TicTacToe game.
 
 Runs on (tested on):
@@ -10,9 +11,6 @@ Runs on (tested on):
 - ✓ Windows (8.1, x86)
 - ✓ Mac OS (Mavericks)
 - ✓ Linux (Ubuntu 14.04 and Ubuntu Server 12.04)
-
-**Current build status:** [![Build Status](https://magnum.travis-ci.com/reginbald/TicTacToe.svg?token=smJBtwwwueA4GzzDEnsz&branch=master)](https://magnum.travis-ci.com/reginbald/TicTacToe)
-
 
 
 [**Staging/Production Environment**](http://tictactoe420.herokuapp.com/) **|** [**Continuous Integration Server**](https://magnum.travis-ci.com/reginbald/TicTacToe)
