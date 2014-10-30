@@ -34,6 +34,20 @@ public class Game{
     // Check if there's a row with the same characters
     public static boolean winRow(){
         for (int i = 0; i < 3; i++){
+            if (board.grid[0][i] == ' '){
+                break;
+            } else {
+                if (board.grid[0][i] == board.grid[0][i] && board.grid[0][i] == board.grid[0][i]){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    // Check if there's a column with the same characters
+    public static boolean winColumn(){
+        for (int i = 0; i < 3; i++){
             if (board.grid[i][0] == ' '){
                 break;
             } else {
@@ -44,6 +58,7 @@ public class Game{
         }
         return false;
     }
+
 
     public static void main(String[] args){
 
