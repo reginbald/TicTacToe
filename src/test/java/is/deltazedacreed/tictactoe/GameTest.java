@@ -93,4 +93,14 @@ public class GameTest{
         assertEquals(true, game.winColumn());
     }
 
+    @Test
+    // Check the WinCross function
+    public void testWinCross(){
+        Game game = new Game();
+
+        game.insert(0, 0);
+        game.insert(1, 1);
+        game.insert(2, 2);
+        assertEquals(true, game.winCross());
+    }
 }
