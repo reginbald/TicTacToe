@@ -26,7 +26,7 @@ public class Game{
     // Check if input is valid.
     public static boolean isValidInput(int x, int y){
         if (x >= 0 && x <= 2 && y >= 0 && y <= 2){
-        	if(board.grid[x][y] == ' ') {
+            if (board.grid[x][y] == ' ') {
                 return true;
             }
         }
