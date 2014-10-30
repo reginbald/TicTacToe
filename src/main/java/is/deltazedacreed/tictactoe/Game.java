@@ -39,7 +39,7 @@ public class Game{
             if (board.grid[0][i] == ' '){
                 break;
             } else {
-                if (board.grid[0][i] == board.grid[0][i] && board.grid[0][i] == board.grid[0][i]){
+                if (board.grid[0][i] == board.grid[1][i] && board.grid[1][i] == board.grid[2][i]){
                     return true;
                 }
             }
