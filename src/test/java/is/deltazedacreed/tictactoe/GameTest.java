@@ -55,7 +55,7 @@ public class GameTest{
     }
 
     @Test
-    // Make sure the input is correct
+    // Make sure the input is valid
     public void testInput(){
         Game game = new Game();
         for (int i = 0; i < 3; i++){
@@ -63,6 +63,14 @@ public class GameTest{
                 assertEquals(true, game.isValidInput(i, j));
             }
        }
+    }
+
+    @Test
+    // Make sure that one can't insert into a non-empty grid square
+    public void testInputWithNonEmptySquare(){
+        Game game = new Game();
+        insert(0, 1)
+        assertEquals(false, game.isValidInput(0, 1));
     }
 
     @Test
