@@ -14,11 +14,11 @@ TODO
 
 #Continuous Delivery. For each code change the CI server runs these steps:
 - [ ] Run build script (all targets)
-- [ ] Run unit and integration tests (if you have integration tests)
+- [x] Run unit and integration tests (if you have integration tests)
 - [ ] Deploy on staging and run End-to-end tests.
 - [ ] Deploy to production server.
 - [ ] Only continue next step if previuous step is success
-- [ ] Generate feedback to developer
+- [x] Generate feedback to developer
 
 - [ ] Something else ... Surprise me !!! 
  
