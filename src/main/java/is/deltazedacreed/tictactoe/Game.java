@@ -75,6 +75,14 @@ public class Game{
         return false;
     }
 
+    // Check if someone has won
+    public static boolean winner(){
+        if (winColumn() || winRow() || winCross()){
+            return true;
+        }
+        return false;
+    }
+
     public static void main(String[] args){
 
     }
