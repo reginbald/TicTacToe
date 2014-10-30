@@ -66,6 +66,13 @@ public class GameTest{
     }
 
     @Test
+    // Test if input is out of range
+    public void testOutOfRangeInput(){
+        Game game = new Game();
+        assertEquals(false, game.isValidInput(0, 3);
+    }
+
+    @Test
     // Make sure that one can't insert into a non-empty grid square
     public void testInputWithNonEmptySquare(){
         Game game = new Game();
