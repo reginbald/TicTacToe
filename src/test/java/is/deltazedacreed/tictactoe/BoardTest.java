@@ -79,7 +79,7 @@ public class BoardTest{
                 column = 0;
             } else {
                 assertEquals('[', test.charAt(j));
-                assertEquals(board.grid[row][column], test.charAt(j + 1));
+                assertEquals(board.getGrid[row][column], test.charAt(j + 1));
                 assertEquals(']', test.charAt(j + 2));
             }
             column++;
