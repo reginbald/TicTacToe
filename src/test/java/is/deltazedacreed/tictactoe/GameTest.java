@@ -103,4 +103,14 @@ public class GameTest{
         game.insert(2, 2);
         assertEquals(true, game.winCross());
     }
+
+    @Test
+    // Check if the winner function gets that someone has won a row
+    public void testRowWinner(){
+        Game game = new Game();
+        game.insert(0, 0);
+        game.insert(0, 1);
+        game.insert(0, 2);
+        assertEquals(true, game.winner());
+    }
 }
