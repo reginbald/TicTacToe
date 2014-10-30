@@ -11,8 +11,22 @@
 apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'checkstyle'
+apply plugin: "jacoco"
 
 mainClassName = "is.deltazedacreed.tictactoe.Game"
+
+jacoco {
+    toolVersion = "0.7.1.201405082137"
+    reportsDir = file("$buildDir/JacocoReport")
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/JacocoReport/jacocoHtml"
+    }
+}
 
 jar {
         manifest {
@@ -35,4 +49,5 @@ dependencies {
 
     compile 'com.sparkjava:spark-core:1.1.1'
 }
+
 task stage { dependsOn installApp }
