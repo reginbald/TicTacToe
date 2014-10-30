@@ -17,10 +17,10 @@ public class GameTest{
         Game game = new Game();
         game.insert(0, 1);
 
-        if (game.board.players == 1){
-            assertEquals('o', game.board.grid[0][1]);
+        if (game.getBoard().getPlayers() == 1){
+            assertEquals('o', game.getBoard().getGrid()[0][1]);
         } else {
-            assertEquals('x', game.board.grid[0][1]);
+            assertEquals('x', game.getBoard().getGrid()[0][1]);
         }
     }
 
@@ -32,12 +32,12 @@ public class GameTest{
         int row = 0;
 
         game.insert(0, 1);
-        game.board.changePlayers();
+        game.getBoard().changePlayers();
         game.insert(0, 2);
-        game.board.changePlayers();
+        game.getBoard().changePlayers();
         game.insert(2, 2);
 
-        StringBuilder test = game.board.writeGameField();
+        StringBuilder test = game.getBoard().writeGameField();
 
         for (int j = 0; j < 30; j = j + 3){
             if (j == 9 || j == 19 || j == 29){
@@ -47,7 +47,7 @@ public class GameTest{
                 column = 0;
             } else {
                 assertEquals('[', test.charAt(j));
-                assertEquals(game.board.grid[row][column], test.charAt(j + 1));
+                assertEquals(game.getBoard().getGrid()[row][column], test.charAt(j + 1));
                 assertEquals(']', test.charAt(j + 2));
             }
             column++;
@@ -191,7 +191,7 @@ public class GameTest{
             for (int j = 0; j < 2; j++){
                 game.insert(i, j);
             }
-            game.board.changePlayers();
+            game.getBoard().changePlayers();
             game.insert(i, 2);
         }
         assertEquals(true, game.tie());
