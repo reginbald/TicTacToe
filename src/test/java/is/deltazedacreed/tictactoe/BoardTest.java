@@ -26,8 +26,8 @@ public class BoardTest{
     }
 
     @Test
-    // Test number of players
-    public void testNumberOfPlayers(){
+    // Test which player begins the game
+    public void testWhoBegins(){
         Board board = new Board();
         assertEquals(1, board.getPlayers());
     }
