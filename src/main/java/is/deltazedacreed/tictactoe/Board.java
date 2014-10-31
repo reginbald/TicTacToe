@@ -28,9 +28,7 @@ public class Board{
 
     // Initialize who's turn it is when the game is played again.
     public void initializePlayer(){
-        if (getPlayers() == 2){
             setPlayers(1);
-        }
     }
 
     public static int getPlayers() {
