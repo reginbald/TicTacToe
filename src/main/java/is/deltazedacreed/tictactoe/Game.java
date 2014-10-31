@@ -175,8 +175,7 @@ public class Game{
             }
             
             // Initialize the game for a new game
-            Game.getBoard().initializePlayer();
-            Board.initializeGrid();
+            board = new Board();
             gameField = game.writeGameField();
         }
     }
