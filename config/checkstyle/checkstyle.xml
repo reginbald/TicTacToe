@@ -8,7 +8,9 @@ what the following rules do, please see the checkstyle configuration
 page at http://checkstyle.sourceforge.net/config.html -->
 
 <module name="Checker">
-  <module name="StrictDuplicateCode"/></module>
+  <module name="StrictDuplicateCode"/>
+    <property name="min" value="15" />
+  </module>
 
   <module name="RegexpSingleline">
     <!-- Requires a Delta Zeda Creed copyright notice in each file.
