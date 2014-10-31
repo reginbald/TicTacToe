@@ -18,35 +18,35 @@
 		<table class="table table-bordered">
                     <tr>
                         <td>
-                            <input type="button" class="btn btn-default" id="0 0" value=" "/>
+                            <input type="button" class="btn btn-default btn-block" id="0 0" value=" "/>
                         </td>
                         <td>
-                            <input type="button" class="btn btn-default" id="0 1" value=" "/>
+                            <input type="button" class="btn btn-default btn-block" id="0 1" value=" "/>
                         </td>
                         <td>
-                            <input type="button" class="btn btn-default" id="0 2" value=" "/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="button" class="btn btn-default" id="1 0" value=" "/>
-                        </td>
-                        <td>
-                            <input type="button" class="btn btn-default" id="1 1" value=" "/>
-                        </td>
-                        <td>
-                            <input type="button" class="btn btn-default" id="1 2" value=" "/>
+                            <input type="button" class="btn btn-default btn-block" id="0 2" value=" "/>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="button" class="btn btn-default" id="2 0" value=" "/>
+                            <input type="button" class="btn btn-default btn-block" id="1 0" value=" "/>
                         </td>
                         <td>
-                            <input type="button" class="btn btn-default" id="2 1" value=" "/>
+                            <input type="button" class="btn btn-default btn-block" id="1 1" value=" "/>
                         </td>
                         <td>
-                            <input type="button" class="btn btn-default" id="2 2" value=" "/>
+                            <input type="button" class="btn btn-default btn-block" id="1 2" value=" "/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" class="btn btn-default btn-block" id="2 0" value=" "/>
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default btn-block" id="2 1" value=" "/>
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default btn-block" id="2 2" value=" "/>
                         </td>
                     </tr>
 		</table>                
@@ -67,11 +67,11 @@
                         url: form.attr('action'),
                         data: 'gridSquare=' + button.id
                     }).done(function( game ){
-                        if(game === 1){
+                        if(game === "1"){
                             $(button).val("o");
                             $('#results').html('Player 2 turn').attr('class', 'alert alert-success');
                         }
-                        if(game === 2){
+                        if(game === "2"){
                             $(button).val("x");
                             $('#results').html('Player 1 turn').attr('class', 'alert alert-success');
                         }
