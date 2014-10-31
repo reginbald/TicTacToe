@@ -11,6 +11,16 @@ import org.junit.Test;
  */
 public class GameTest{
 
+    @Test
+    // Test if changePlayer function swiches to correct player.
+    public void testChangePlayers(){
+        Game game = new Game();
+        game.changePlayers();
+        assertEquals(2, game.getBoard().getPlayers());
+        board.changePlayers();
+        assertEquals(1, game.getBoard().getPlayers()); 
+    }
+
     // Test if the insert function inserts the correct letter.
     @Test
     public void testInsert(){
