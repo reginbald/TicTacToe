@@ -146,6 +146,7 @@ public class GameTest{
     }
 
     @Test
+    // Checkt the other possible win-outcome of the winCross function
     public void testWinCross2(){
         Game game = new Game();
         game.insert(0, 2);
@@ -153,6 +154,7 @@ public class GameTest{
         game.insert(2, 0);
         assertEquals(true, game.winCross());
     }
+    // Test the winCross function when only the middle is occupied
     @Test
     public void testWinCross3(){
         Game game = new Game();
