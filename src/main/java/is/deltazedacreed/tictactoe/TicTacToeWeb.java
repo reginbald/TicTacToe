@@ -35,20 +35,20 @@ public class TicTacToeWeb implements SparkApplication{
                     return "Input error";
                 } else {
                     game.insert(x, y);
-                    gameField = Game.getBoard().writeGameField();
+                    gameField = game.writeGameField();
                     game.changePlayers(); 
                     if (Game.winner()){
                         // Initialize the game for a new game
                         game.getBoard().initializePlayer();
                         Board.initializeGrid();
-                        gameField = Game.getBoard().writeGameField();
+                        gameField = game.writeGameField();
                         return "Player" + Board.getPlayers() + " wins!";
                     }
                     if (Game.tie()) {
                         // Initialize the game for a new game
                         game.getBoard().initializePlayer();
                         Board.initializeGrid();
-                        gameField = Game.getBoard().writeGameField();
+                        gameField = game.writeGameField();
                         return "It's a tie!";
                     } else {
                         return gameField.toString();

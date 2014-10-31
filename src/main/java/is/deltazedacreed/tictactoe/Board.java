@@ -26,19 +26,6 @@ public class Board{
         }
     }
 
-    // Initialize game field.
-    public StringBuilder writeGameField(){
-        StringBuilder gameField = new StringBuilder();
-
-        for (int i = 0; i < 3; i++){
-            for (int j = 0; j < 3; j++){
-                gameField.append("[" + getGrid()[i][j] + "]");
-            }
-            gameField.append("\n");
-        }
-        return gameField;
-    }
-
     // Initialize who's turn it is when the game is played again.
     public void initializePlayer(){
         if (getPlayers() == 2){
