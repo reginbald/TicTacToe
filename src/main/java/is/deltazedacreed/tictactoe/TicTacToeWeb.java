@@ -33,7 +33,7 @@ public class TicTacToeWeb implements SparkApplication{
                 game.insert(x, y);
                 gameField = game.writeGameField();
                 game.changePlayers(); 
-                return Board.getPlayers();
+
                 if (Game.winner()){
                     // Initialize the game for a new game
                     game.setBoard(new Board());
@@ -46,6 +46,7 @@ public class TicTacToeWeb implements SparkApplication{
                     gameField = game.writeGameField();
                     return "It's a tie!";
                 }
+                return Board.getPlayers();
             }
         });
     }
