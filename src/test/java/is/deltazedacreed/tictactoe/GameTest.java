@@ -47,7 +47,7 @@ public class GameTest{
         game.changePlayers();
         game.insert(2, 2);
 
-        StringBuilder test = game.getBoard().writeGameField();
+        StringBuilder test = game.writeGameField();
 
         for (int j = 0; j < 30; j = j + 3){
             if (j == 9 || j == 19 || j == 29){
