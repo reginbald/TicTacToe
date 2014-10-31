@@ -37,7 +37,7 @@
                 $.ajax({
                     type: form.attr('method'),
                     url: form.attr('action'),
-                    data: 'id=' + x-coord + " " + y-coord
+                    data: 'x-coord=' + x-coord + '&y-coord=' + y-coord
                 }).done(function(game) {
                     $('#results').html(game).attr('class', 'alert alert-success');
                 }).fail(function() {
