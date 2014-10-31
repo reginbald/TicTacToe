@@ -23,13 +23,6 @@ public class TicTacToeWeb implements SparkApplication{
 
     public void init(){
         final Game game = new Game();
-        //post(new Route("/"){
-        //    @Override
-        //    public Object handle(Request request, Response response){
-        //        StringBuilder gameField = game.getBoard().writeGameField();
-        //        return gameField;
-        //    }
-        //});
         post(new Route("/"){
             @Override
             public Object handle(Request request, Response response){
@@ -43,7 +36,7 @@ public class TicTacToeWeb implements SparkApplication{
                 } else {
                     game.insert(x, y);
                     gameField = Game.getBoard().writeGameField();
-                    Game.getBoard().changePlayers(); 
+                    game.changePlayers(); 
                     if (Game.winner()){
                         // Initialize the game for a new game
                         game.getBoard().initializePlayer();
