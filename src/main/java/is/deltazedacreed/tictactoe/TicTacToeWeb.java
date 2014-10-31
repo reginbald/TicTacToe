@@ -30,7 +30,7 @@ public class TicTacToeWeb implements SparkApplication{
         //        return gameField;
         //    }
         //});
-        post(new Route("/play"){
+        post(new Route("/"){
             @Override
             public Object handle(Request request, Response response){
                 StringBuilder gameField = new StringBuilder();
