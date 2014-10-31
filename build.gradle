@@ -2,7 +2,6 @@ apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'checkstyle'
 apply plugin: "jacoco"
-apply plugin: 'findbugs'
 
 mainClassName = "is.deltazedacreed.tictactoe.TicTacToeWeb"
 
