@@ -26,10 +26,10 @@ public class Game{
 
     // Changes player, if player 1 is currently playing, the function switches to player 2
     public void changePlayers(){
-        if (getPlayers() == 1){
-            setPlayers(2);
+        if (Board.getPlayers() == 1){
+            Board.setPlayers(2);
         } else {
-            setPlayers(1);
+            Board.setPlayers(1);
         }
     }
 
@@ -138,7 +138,7 @@ public class Game{
                 if (Game.isValidInput(x, y)){
                     game.insert(x, y);
                     gameField = Game.getBoard().writeGameField();
-                    Game.getBoard().changePlayers();
+                    game.changePlayers();
                 } else {
                     System.out.println("Location is not valid. Please try again.");
                 }
