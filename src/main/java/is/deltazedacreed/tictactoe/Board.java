@@ -13,8 +13,8 @@ public class Board{
     // Constructor
     public Board(){
         setGrid(new char[3][3]);
-        setPlayers(1);
         initializeGrid();
+        initializePlayer();
     }
 
     // Initialize grid. Insert whitespaces in every grid square.
@@ -28,9 +28,7 @@ public class Board{
 
     // Initialize who's turn it is when the game is played again.
     public void initializePlayer(){
-        if (getPlayers() == 2){
             setPlayers(1);
-        }
     }
 
     public static int getPlayers() {
