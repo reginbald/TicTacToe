@@ -42,9 +42,9 @@ public class GameTest{
         int row = 0;
 
         game.insert(0, 1);
-        game.getBoard().changePlayers();
+        game.changePlayers();
         game.insert(0, 2);
-        game.getBoard().changePlayers();
+        game.changePlayers();
         game.insert(2, 2);
 
         StringBuilder test = game.getBoard().writeGameField();
