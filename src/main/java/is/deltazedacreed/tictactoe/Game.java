@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Game{
 
     private static Board board;
-    public static boolean playAgain;
+    private static boolean playAgain;
     public static StringBuilder gameField;
     private static Scanner scanInt;
     private static Scanner scanString;
@@ -134,6 +134,7 @@ public class Game{
         Game game = new Game();
         int x;
         int y;
+        gameField = game.writeGameField();
 
         // Start the game
         System.out.println("Welcome to the game TicTacToe!");
@@ -151,7 +152,9 @@ public class Game{
                 if (Game.isValidInput(x, y)){
                     game.insert(x, y);
                     gameField = game.writeGameField();
-                    game.changePlayers();
+                    if (!Game.winner() && !Game.tie()){
+                        game.changePlayers();
+                    }
                 } else {
                     System.out.println("Location is not valid. Please try again.");
                 }
@@ -161,7 +164,7 @@ public class Game{
 
             // Check whether someone has won or if there's a tie
             if (Game.winner()){
-                System.out.println("Player" + Board.getPlayers() + " wins!");
+                System.out.println("Player " + Board.getPlayers() + " wins!");
             } else {
                 System.out.println("It's a tie!");
             }
@@ -175,8 +178,7 @@ public class Game{
             }
             
             // Initialize the game for a new game
-            Game.getBoard().initializePlayer();
-            Board.initializeGrid();
+            game.setBoard(new Board());
             gameField = game.writeGameField();
         }
     }

@@ -14,21 +14,16 @@ public class Board{
     public Board(){
         setGrid(new char[3][3]);
         initializeGrid();
-        initializePlayer();
+        setPlayers(1);
     }
 
     // Initialize grid. Insert whitespaces in every grid square.
-    public static void initializeGrid(){
+    private static void initializeGrid(){
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
                 getGrid()[i][j] = ' ';
             }
         }
-    }
-
-    // Initialize who's turn it is when the game is played again.
-    public void initializePlayer(){
-            setPlayers(1);
     }
 
     public static int getPlayers() {

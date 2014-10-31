@@ -39,15 +39,14 @@ public class TicTacToeWeb implements SparkApplication{
                     game.changePlayers(); 
                     if (Game.winner()){
                         // Initialize the game for a new game
-                        game.getBoard().initializePlayer();
-                        Board.initializeGrid();
+                        game.setBoard(new Board());
                         gameField = game.writeGameField();
+
                         return "Player" + Board.getPlayers() + " wins!";
                     }
                     if (Game.tie()) {
                         // Initialize the game for a new game
-                        game.getBoard().initializePlayer();
-                        Board.initializeGrid();
+                        game.setBoard(new Board());
                         gameField = game.writeGameField();
                         return "It's a tie!";
                     } else {
