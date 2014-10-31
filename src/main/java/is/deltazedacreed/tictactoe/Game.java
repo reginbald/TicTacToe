@@ -24,6 +24,15 @@ public class Game{
         scanString = new Scanner(System.in);
     }
 
+    // Changes player, if player 1 is currently playing, the function switches to player 2
+    public void changePlayers(){
+        if (getPlayers() == 1){
+            setPlayers(2);
+        } else {
+            setPlayers(1);
+        }
+    }
+
     // Insert a player's character at the correct place.
     public void insert(int x, int y){
         if (Board.getPlayers() == 1){
