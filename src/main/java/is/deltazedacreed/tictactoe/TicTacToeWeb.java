@@ -30,15 +30,43 @@ public class TicTacToeWeb implements SparkApplication{
         //        return gameField;
         //    }
         //});
-        post(new Route("/"){
+        post(new Route("/play"){
             @Override
             public Object handle(Request request, Response response){
                 StringBuilder gameField = new StringBuilder();
-                Integer xCoord = Integer.valueOf(request.queryParams("x-coord"));
-                Integer yCoord = Integer.valueOf(request.queryParams("y-coord"));
-                game.insert(xCoord, yCoord);
-                gameField = game.getBoard().writeGameField();
-                return gameField;
+                Integer x = Integer.valueOf(request.queryParams("x-coord"));
+                Integer y = Integer.valueOf(request.queryParams("y-coord"));
+
+                // Insert if input is valid
+                if (!Game.isValidInput(x, y)){
+                    return "Input error";
+                } else {
+                    game.insert(x, y);
+                    gameField = Game.getBoard().writeGameField();
+                    Game.getBoard().changePlayers(); 
+                    if (Game.winner()){
+                        // Initialize the game for a new game
+                        game.getBoard().initializePlayer();
+                        Board.initializeGrid();
+                        gameField = Game.getBoard().writeGameField();
+                        return "Player" + Board.getPlayers() + " wins!";
+                    } if (Game.tie()) {
+                        // Initialize the game for a new game
+                        game.getBoard().initializePlayer();
+                        Board.initializeGrid();
+                        gameField = Game.getBoard().writeGameField();
+                        return "It's a tie!";
+                    } else {
+                        return gameField.toString();
+                    }
+                }
+
+                // Initialize the game for a new game
+                game.getBoard().initializePlayer();
+                Board.initializeGrid();
+                gameField = Game.getBoard().writeGameField();
+        }
+    }
             }
         });
     }
