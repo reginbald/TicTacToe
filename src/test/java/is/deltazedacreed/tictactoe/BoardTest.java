@@ -33,14 +33,6 @@ public class BoardTest{
     }
 
     @Test
-    // Test if player is initialized.
-    public void testInitializePlayer(){
-        Board board = new Board();
-        board.initializePlayer();
-        assertEquals(1, board.getPlayers());
-    }
-
-    @Test
     // Test if grid is empty, that is, each grid square is a whitespace.
     public void testGridIsEmpty(){
         Board board = new Board();
