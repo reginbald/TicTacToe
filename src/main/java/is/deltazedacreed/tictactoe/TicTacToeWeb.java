@@ -39,7 +39,7 @@ public class TicTacToeWeb implements SparkApplication{
                 Integer yCoord = Integer.valueOf(coordinates[1]);
                 game.insert(xCoord, yCoord);
                 gameField = game.getBoard().writeGameField();
-                return gameField.toString();
+                return xCoord + yCoord;
             }
         });
     }
