@@ -18,25 +18,23 @@
             </form>
             <hr>
             <div id="results" class="alert alert-info">
-                <div class="table table-bordered">
-                    <table class="table">
-                        <tr>
-                            <td> </td>
-                            <td> </td> 
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                    </table>
-                </div>
+                <table class="table table-bordered">
+                    <tr>
+                        <td> </td>
+                        <td> </td> 
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                </table>
             </div>
             <hr>
         </div>
@@ -50,16 +48,21 @@
             form.submit(function( event ) {
                 var x-coord = $("#x-coord").val();
                 var y-coord = $("#y-coord").val();
-                $.ajax({
-                    type: form.attr('method'),
-                    url: form.attr('action'),
-                    data: 'x-coord=' + x-coord + '&y-coord=' + y-coord
-                }).done(function(game) {
-                    $('#results').html(game).attr('class', 'alert alert-success');
-                }).fail(function() {
-                    $('#results').html('error').attr('class', 'alert alert-danger');
-                });
-                event.preventDefault();
+                if( x-coord < 0 ¡ || x-coor 2 || y-coord < 0 || y-coord > 2){
+                    $('#results').html('Input error').attr('class', 'alert alert-danger');
+                } 
+                else {
+                    $.ajax({
+                        type: form.attr('method'),
+                        url: form.attr('action'),
+                        data: 'x-coord=' + x-coord + '&y-coord=' + y-coord
+                    }).done(function(game) {
+                        $('#results').html(game).attr('class', 'alert alert-success');
+                    }).fail(function() {
+                        $('#results').html('error').attr('class', 'alert alert-danger');
+                    });
+                    event.preventDefault();
+                }
             });
         });
         </script>
