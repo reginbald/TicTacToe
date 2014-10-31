@@ -39,15 +39,6 @@ public class Board{
         return gameField;
     }
 
-    // Changes player, if player 1 is currently playing, the function switches to player 2
-    public void changePlayers(){
-        if (getPlayers() == 1){
-            setPlayers(2);
-        } else {
-            setPlayers(1);
-        }
-    }
-
     // Initialize who's turn it is when the game is played again.
     public void initializePlayer(){
         if (getPlayers() == 2){
