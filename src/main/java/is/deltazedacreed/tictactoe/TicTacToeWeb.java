@@ -26,11 +26,10 @@ public class TicTacToeWeb implements SparkApplication{
         post(new Route("/"){
             @Override
             public Object handle(Request request, Response response){
-                StringBuilder gameField = new StringBuilder();
-                String coordinates = request.queryParams("gridSquare");
-                String[] xy = coordinates.split("\\s+");
-                int x = Integer.parseInt(xy[0]);
-                int y = Integer.parseInt(xy[1]);
+                //String coordinates = request.queryParams("gridSquare");
+                //String[] xy = coordinates.split("\\s+");
+                int x = 0;
+                int y = 0;
 
                 game.insert(x, y);
                 game.changePlayers(); 
@@ -38,16 +37,14 @@ public class TicTacToeWeb implements SparkApplication{
                 if (Game.winner()){
                     // Initialize the game for a new game
                     game.setBoard(new Board());
-                    gameField = game.writeGameField();
                     return "Player " + Board.getPlayers() + " wins!";
                 }
                 if (Game.tie()) {
                     // Initialize the game for a new game
                     game.setBoard(new Board());
-                    gameField = game.writeGameField();
                     return "It's a tie!";
                 }
-                return Integer.valueOf(Board.getPlayers()).toString();
+                return Board.getPlayers();
             }
         });
     }
