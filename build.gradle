@@ -16,6 +16,14 @@ buildscript {
     }
 }
 
+tasks.cpd {
+    reports {
+        text.enabled = true
+        xml.enabled = false
+    }
+    source = files('src/main/java')
+}
+
 jacoco {
     toolVersion = "0.7.1.201405082137"
     reportsDir = file("$buildDir/JacocoReport")
