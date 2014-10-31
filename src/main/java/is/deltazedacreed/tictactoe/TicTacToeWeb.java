@@ -30,28 +30,24 @@ public class TicTacToeWeb implements SparkApplication{
                 Integer x = Integer.valueOf(request.queryParams("x-coord"));
                 Integer y = Integer.valueOf(request.queryParams("y-coord"));
 
-                // Insert if input is valid
-                if (!Game.isValidInput(x, y)){
-                    return "Input error";
-                } else {
-                    game.insert(x, y);
+                game.insert(x, y);
+                gameField = game.writeGameField();
+                game.changePlayers(); 
+                return Board.getPlayers();
+                if (Game.winner()){
+                    // Initialize the game for a new game
+                    game.setBoard(new Board());
                     gameField = game.writeGameField();
-                    game.changePlayers(); 
-                    if (Game.winner()){
-                        // Initialize the game for a new game
-                        game.setBoard(new Board());
-                        gameField = game.writeGameField();
 
-                        return "Player" + Board.getPlayers() + " wins!";
-                    }
-                    if (Game.tie()) {
-                        // Initialize the game for a new game
-                        game.setBoard(new Board());
-                        gameField = game.writeGameField();
-                        return "It's a tie!";
-                    } else {
-                        return gameField.toString();
-                    }
+                    return "Player " + Board.getPlayers() + " wins!";
+                }
+                if (Game.tie()) {
+                    // Initialize the game for a new game
+                    game.setBoard(new Board());
+                    gameField = game.writeGameField();
+                    return "It's a tie!";
+                } else {
+                    return gameField.toString();
                 }
             }
         });
