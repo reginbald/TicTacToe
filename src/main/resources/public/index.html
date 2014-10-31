@@ -9,34 +9,48 @@
     <body>
         <div class="container">
             <h1>Tic Tac Toe</h1>
-            <form method="post" action="/" class="form-inline" role="form">
-                <div class="form group">
-                    <input class="form-control "type="text" name="x-coord" id="x-coord placeholder="3">
-                    <input class="form-control" type="text" name="y-coord" id="y-coord placeholder="3">
-                </div>
-                <button type="submit" class="btn btn-default">insert</button>
-            </form>
             <hr>
             <div id="results" class="alert alert-info">
-                <table class="table table-bordered">
-                    <tr>
-                        <td> </td>
-                        <td> </td> 
-                        <td> </td>
-                    </tr>
-                    <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                    </tr>
-                    <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                    </tr>
-                </table>
+                Press a button to play!
             </div>
             <hr>
+            <form method="post" action="/" class="form-inline" role="form">
+		<table class="table table-bordered">
+                    <tr>
+                        <td>
+                            <input type="button" class="btn btn-default" id="0 0" value=" "/>
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default" id="0 1" value=" "/>
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default" id="0 2" value=" "/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" class="btn btn-default" id="1 0" value=" "/>
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default" id="1 1" value=" "/>
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default" id="1 2" value=" "/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" class="btn btn-default" id="2 0" value=" "/>
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default" id="2 1" value=" "/>
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default" id="2 2" value=" "/>
+                        </td>
+                    </tr>
+		</table>                
+            </form>
         </div>
         <!-- Load jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -44,9 +58,35 @@
         <!-- Use ajax to submit form, retrive joke and display on page -->
         <script>
             $(document).ready(function() {
-                var form = $('form');
-                form.submit(function( event ){
-                    $('#results').html('Working').attr('class', 'alert alert-success');
+                $(.btn).click(function( event ){
+                    var form = $('form');
+                    var button = this;
+                    button.disabled = true;
+                    $.ajax({
+                        type: form.attr('method'),
+                        url: form.attr('action'),
+                        data: 'gridSquare=' + button.id
+                    }).done(function( game ){
+                        if(game === 1){
+                            $(button).val("o");
+                            $('#results').html('Player 2 turn').attr('class', 'alert alert-success');
+                        }
+                        if(game === 2){
+                            $(button).val("x");
+                            $('#results').html('Player 1 turn').attr('class', 'alert alert-success');
+                        }
+                        if(game === "Player 1 wins!"){
+                            $('#results').html('Player 1 wins!').attr('class', 'alert alert-success');  
+                        }
+                        if(game === "Player 2 wins!"){
+                            $('#results').html('Player 1 wins!').attr('class', 'alert alert-success');
+                        }
+                        if(game === "It's a tie!"){
+                            $('#results').html('It's a tie!').attr('class', 'alert alert-success');
+                        }
+                    }).fail(function(){
+                        $('#results').html('Sorry to disturb you m'lady *tip* *tip* but the input is invalid').attr('class', 'alert alert-danger');
+                    });
                 });
             });
         </script>
