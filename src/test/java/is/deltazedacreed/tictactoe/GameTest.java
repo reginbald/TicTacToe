@@ -47,7 +47,7 @@ public class GameTest{
         game.changePlayers();
         game.insert(2, 2);
 
-        StringBuilder test = game.getBoard().writeGameField();
+        StringBuilder test = game.writeGameField();
 
         for (int j = 0; j < 30; j = j + 3){
             if (j == 9 || j == 19 || j == 29){
@@ -91,6 +91,30 @@ public class GameTest{
     }
 
     @Test
+    // Test if the game field prints out the whitespaces of the grid on the correct form
+    public void testGameField(){
+        Game game = new Game();
+        int column = 0;
+        int row = 0;
+
+        StringBuilder test = game.writeGameField();
+
+        for (int j = 0; j < 30; j = j + 3){
+            if (j == 9 || j == 19 || j == 29){
+                assertEquals('\n', test.charAt(j));
+                j++;
+                row++;
+                column = 0;
+            } else {
+                assertEquals('[', test.charAt(j));
+                assertEquals(Game.getBoard().getGrid()[row][column], test.charAt(j + 1));
+                assertEquals(']', test.charAt(j + 2));
+            }
+            column++;
+        }
+    }
+
+    @Test
     // Check the winRow function
     public void testWinRow(){
         Game game = new Game();
@@ -120,6 +144,7 @@ public class GameTest{
         game.insert(2, 2);
         assertEquals(true, game.winCross());
     }
+
     @Test
     public void testWinCross2(){
         Game game = new Game();
@@ -136,7 +161,7 @@ public class GameTest{
     }
 
     @Test
-    // check if wincross gives true when it shouldn't
+    // Check if wincross gives true when it shouldn't
     public void testNoWinCross(){
         Game game = new Game();
         game.insert(0, 0);
@@ -146,7 +171,7 @@ public class GameTest{
     }
 
     @Test
-    // check if wincross returns false if the board is empty
+    // Check if wincross returns false if the board is empty
     public void testEmptyWinCross(){
         Game game = new Game();
         assertEquals(false, game.winCross());

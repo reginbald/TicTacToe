@@ -24,6 +24,19 @@ public class Game{
         scanString = new Scanner(System.in);
     }
 
+    // Write the game field.
+    public StringBuilder writeGameField(){
+        StringBuilder gameField = new StringBuilder();
+
+        for (int i = 0; i < 3; i++){
+            for (int j = 0; j < 3; j++){
+                gameField.append("[" + Board.getGrid()[i][j] + "]");
+            }
+            gameField.append("\n");
+        }
+        return gameField;
+    }
+
     // Changes player, if player 1 is currently playing, the function switches to player 2
     public void changePlayers(){
         if (Board.getPlayers() == 1){
@@ -137,7 +150,7 @@ public class Game{
                 // Insert if input is valid
                 if (Game.isValidInput(x, y)){
                     game.insert(x, y);
-                    gameField = Game.getBoard().writeGameField();
+                    gameField = game.writeGameField();
                     game.changePlayers();
                 } else {
                     System.out.println("Location is not valid. Please try again.");
@@ -164,7 +177,7 @@ public class Game{
             // Initialize the game for a new game
             Game.getBoard().initializePlayer();
             Board.initializeGrid();
-            gameField = Game.getBoard().writeGameField();
+            gameField = game.writeGameField();
         }
     }
 
