@@ -9,6 +9,11 @@
     <body>
         <div class="container">
             <h1>Tic Tac Toe</h1>
+            <hr>
+            <div id="results" class="alert alert-info">
+                Press a button to play!
+            </div>
+            <hr>
             <form method="post" action="/" class="form-inline" role="form">
 		<table class="table table-bordered">
                     <tr>
@@ -46,27 +51,6 @@
                     </tr>
 		</table>                
             </form>
-            <hr>
-            <div id="results">
-                <table class="table table-bordered">
-                    <tr>
-                        <td> </td>
-                        <td> </td> 
-                        <td> </td>
-                    </tr>
-                    <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                    </tr>
-                    <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                    </tr>
-                </table>
-            </div>
-            <hr>
         </div>
         <!-- Load jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -74,6 +58,36 @@
         <!-- Use ajax to submit form, retrive joke and display on page -->
         <script>
             $(document).ready(function() {
+                $(.btn).click(function( event ){
+                    var form = $('form');
+                    var button = this;
+                    button.disabled = true;
+                    $.ajax({
+                        type: form.attr('method'),
+                        url: form.attr('action'),
+                        data: 'gridSquare=' + button.id
+                    }).done(function( game ){
+                        if(game === 1){
+                            $(button).val("o");
+                            $('#results').html('Player 2 turn').attr('class', 'alert alert-success');
+                        }
+                        if(game === 2){
+                            $(button).val("x");
+                            $('#results').html('Player 1 turn').attr('class', 'alert alert-success');
+                        }
+                        if(game === "Player 1 wins!"){
+                            $('#results').html('Player 1 wins!').attr('class', 'alert alert-success');  
+                        }
+                        if(game === "Player 2 wins!"){
+                            $('#results').html('Player 1 wins!').attr('class', 'alert alert-success');
+                        }
+                        if(game === "It's a tie!"){
+                            $('#results').html('It's a tie!').attr('class', 'alert alert-success');
+                        }
+                    }).fail(function(){
+                        $('#results').html('Sorry to disturb you m'lady *tip* *tip* but the input is invalid').attr('class', 'alert alert-danger');
+                    });
+                });
             });
         </script>
     </body>
