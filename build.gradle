@@ -2,27 +2,16 @@ apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'checkstyle'
 apply plugin: "jacoco"
-apply plugin: 'cpd'
+apply plugin: 'findbugs'
 
 mainClassName = "is.deltazedacreed.tictactoe.TicTacToeWeb"
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'de.aaschmid.gradle.plugins:gradle-cpd-plugin:0.1'
-    }
-}
-
-tasks.cpd {
+tasks.withType(FindBugs) {
     reports {
-        text.enabled = true
         xml.enabled = false
+        html.enabled = true
     }
-    source = files('src/main/java')
-}
+ }
 
 jacoco {
     toolVersion = "0.7.1.201405082137"
