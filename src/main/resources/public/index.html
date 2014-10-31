@@ -11,10 +11,10 @@
             <h1>Tic Tac Toe</h1>
             <form method="post" action="/" class="form-inline" role="form">
                 <div class="form group">
-                    <input type="text" name="x-coord" id="x-coord placeholder="3">
-                    <input type="text" name="y-coord" id="y-coord placeholder="3">
+                    <input class="form-control "type="text" name="x-coord" id="x-coord placeholder="3">
+                    <input class="form-control" type="text" name="y-coord" id="y-coord placeholder="3">
                 </div>
-                <button type="submit">insert</button>
+                <button type="submit" class="btn btn-default">insert</button>
             </form>
             <hr>
             <div id="results" class="alert alert-info">
@@ -43,30 +43,30 @@
 
         <!-- Use ajax to submit form, retrive joke and display on page -->
         <script>
-        $(document).ready(function() {
-            alert("javascript working!");
-            var form = $('form');
-            form.submit(function( event ) {
-                alert("form javascript working!");
-                var x-coord = $("#x-coord").val();
-                var y-coord = $("#y-coord").val();
-                if( x-coord < 0 ¡ || x-coor 2 || y-coord < 0 || y-coord > 2){
-                    $('#results').html('Input error').attr('class', 'alert alert-danger');
-                } 
-                else {
-                    $.ajax({
-                        type: form.attr('method'),
-                        url: form.attr('action'),
-                        data: 'x-coord=' + x-coord + '&y-coord=' + y-coord
-                    }).done(function(game) {
-                        $('#results').html(game).attr('class', 'alert alert-success');
-                    }).fail(function() {
-                        $('#results').html('error').attr('class', 'alert alert-danger');
-                    });
-                    event.preventDefault();
-                }
+            $(document).ready(function() {
+                alert("javascript working!");
+                var form = $('form');
+                form.submit(function( event ) {
+                    alert("form javascript working!");
+                    var x-coord = $("#x-coord").val();
+                    var y-coord = $("#y-coord").val();
+                    if( x-coord < 0 ¡ || x-coor 2 || y-coord < 0 || y-coord > 2){
+                        $('#results').html('Input error').attr('class', 'alert alert-danger');
+                    } 
+                    else {
+                        $.ajax({
+                            type: form.attr('method'),
+                            url: form.attr('action'),
+                            data: 'x-coord=' + x-coord + '&y-coord=' + y-coord
+                        }).done(function(game) {
+                            $('#results').html(game).attr('class', 'alert alert-success');
+                        }).fail(function() {
+                            $('#results').html('error').attr('class', 'alert alert-danger');
+                        });
+                        event.preventDefault();
+                    }
+                });
             });
-        });
         </script>
     </body>
 </html>
