@@ -13,8 +13,8 @@ public class Board{
     // Constructor
     public Board(){
         setGrid(new char[3][3]);
-        setPlayers(1);
         initializeGrid();
+        initializePlayer();
     }
 
     // Initialize grid. Insert whitespaces in every grid square.
