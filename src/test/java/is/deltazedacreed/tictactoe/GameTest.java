@@ -196,4 +196,14 @@ public class GameTest{
         }
         assertEquals(true, game.tie());
     }
+
+    @Test
+    // Check what tie() does if there is no tie
+    public void testNoTie(){
+        Game game = new Game();
+        game.insert(0, 0);
+        game.insert(0, 1);
+        game.insert(1, 2);
+        assertEquals(false, game.tie());
+    }
 }
