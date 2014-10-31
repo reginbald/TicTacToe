@@ -36,7 +36,6 @@ public class BoardTest{
     // Test if player is initialized.
     public void testInitializePlayer(){
         Board board = new Board();
-        board.changePlayers();
         board.initializePlayer();
         assertEquals(1, board.getPlayers());
     }

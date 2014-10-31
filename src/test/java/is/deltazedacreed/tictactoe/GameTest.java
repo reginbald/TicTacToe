@@ -17,7 +17,7 @@ public class GameTest{
         Game game = new Game();
         game.changePlayers();
         assertEquals(2, game.getBoard().getPlayers());
-        board.changePlayers();
+        game.changePlayers();
         assertEquals(1, game.getBoard().getPlayers()); 
     }
 
@@ -201,7 +201,7 @@ public class GameTest{
             for (int j = 0; j < 2; j++){
                 game.insert(i, j);
             }
-            game.getBoard().changePlayers();
+            game.changePlayers();
             game.insert(i, 2);
         }
         assertEquals(true, game.tie());
