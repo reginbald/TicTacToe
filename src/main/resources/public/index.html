@@ -45,27 +45,6 @@
         <script>
             $(document).ready(function() {
                 alert("javascript working!");
-                var form = $('form');
-                form.submit(function( event ) {
-                    alert("form javascript working!");
-                    var x-coord = $("#x-coord").val();
-                    var y-coord = $("#y-coord").val();
-                    if( x-coord < 0  || x-coor 2 || y-coord < 0 || y-coord > 2){
-                        $('#results').html('Input error').attr('class', 'alert alert-danger');
-                    } 
-                    else {
-                        $.ajax({
-                            type: form.attr('method'),
-                            url: form.attr('action'),
-                            data: 'x-coord=' + x-coord + '&y-coord=' + y-coord
-                        }).done(function(game) {
-                            $('#results').html(game).attr('class', 'alert alert-success');
-                        }).fail(function() {
-                            $('#results').html('error').attr('class', 'alert alert-danger');
-                        });
-                        event.preventDefault();
-                    }
-                });
             });
         </script>
     </body>
