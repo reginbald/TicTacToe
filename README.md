@@ -10,12 +10,11 @@ Simple TicTacToe game.
 Runs on (tested on):
 
 - ✓ Windows (8.1, x86)
-- ✓ Mac OS (Mavericks)
+- ✓ Mac OS (Yosemite & Mavericks)
 - ✓ Linux (Ubuntu 14.04 and Ubuntu Server 12.04)
 
 
-[**Staging/Production Environment**](http://tictactoe420.herokuapp.com/) **|** [**Continuous Integration Server**](https://magnum.travis-ci.com/reginbald/TicTacToe)
-
+[**Continuous Integration Server**](https://magnum.travis-ci.com/reginbald/TicTacToe) **|** [**Staging Environment**](http://tictactoe420.herokuapp.com/) **|** [**Production Environment**](http://tictactoeproduction.herokuapp.com/)
 ## Code coverage report instructions:
 To generate a code coverage report use the command "./bin/code_coverage" without the quotation marks.
 
