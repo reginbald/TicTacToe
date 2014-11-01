@@ -32,6 +32,7 @@ public class TicTacToeWeb implements SparkApplication{
                 int y = Integer.parseInt(xy[1]);
 
                 game.insert(x, y);
+                int player = Board.getPlayers();
                 game.changePlayers(); 
 
                 if (Game.winner()){
@@ -44,7 +45,7 @@ public class TicTacToeWeb implements SparkApplication{
                     game.setBoard(new Board());
                     return "It's a tie!";
                 }
-                return Board.getPlayers();
+                return player;
             }
         });
     }
