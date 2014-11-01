@@ -68,7 +68,7 @@
                         data: 'gridSquare=' + button.id
                     }).done(function( game ){
                         if(game === "1"){
-                            $(button).vali("O");
+                            $(button).val("O");
                             $('#results').html("It's player 2's turn").attr('class', 'alert alert-success');
                         }
                         if(game === "2"){
