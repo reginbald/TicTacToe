@@ -68,18 +68,20 @@
                         data: 'gridSquare=' + button.id
                     }).done(function( game ){
                         if(game === "1"){
-                            $(button).val("o");
+                            $(button).vali("O");
                             $('#results').html("Player 2 turn").attr('class', 'alert alert-success');
                         }
                         if(game === "2"){
-                            $(button).val("x");
+                            $(button).val("X");
                             $('#results').html("Player 1 turn").attr('class', 'alert alert-success');
                         }
                         if(game === "Player 1 wins!"){
+                            $(button).val("O");
                             $('.btn').disabled = true;
                             $('#results').html("Player 1 wins!").attr('class', 'alert alert-success');  
                         }
                         if(game === "Player 2 wins!"){
+                            $(button).val("X");
                             $('.btn').disabled = true;
                             $('#results').html("Player 2 wins!").attr('class', 'alert alert-success');
                         }
