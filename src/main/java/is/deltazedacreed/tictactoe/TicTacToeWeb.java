@@ -38,7 +38,7 @@ public class TicTacToeWeb implements SparkApplication{
                 if (Game.winner()){
                     // Initialize the game for a new game
                     game.setBoard(new Board());
-                    return "Player " + Board.getPlayers() + " wins!";
+                    return "Player " + player + " wins!";
                 }
                 if (Game.tie()) {
                     // Initialize the game for a new game
