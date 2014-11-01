@@ -30,15 +30,15 @@ public class TestButtons {
 
   @Test
   public void testButtons() throws Exception {
-    assertEquals("", driver.findElement(By.id("0 0")).getText());
-    assertEquals("", driver.findElement(By.id("0 1")).getText());
-    assertEquals("", driver.findElement(By.id("0 2")).getText());
-    assertEquals("", driver.findElement(By.id("1 0")).getText());
-    assertEquals("", driver.findElement(By.id("1 1")).getText());
-    assertEquals("", driver.findElement(By.id("1 2")).getText());
-    assertEquals("", driver.findElement(By.id("2 0")).getText());
-    assertEquals("", driver.findElement(By.id("2 1")).getText());
-    assertEquals("", driver.findElement(By.id("2 2")).getText());
+    assertEquals(" ", driver.findElement(By.id("0 0")).getText());
+    assertEquals(" ", driver.findElement(By.id("0 1")).getText());
+    assertEquals(" ", driver.findElement(By.id("0 2")).getText());
+    assertEquals(" ", driver.findElement(By.id("1 0")).getText());
+    assertEquals(" ", driver.findElement(By.id("1 1")).getText());
+    assertEquals(" ", driver.findElement(By.id("1 2")).getText());
+    assertEquals(" ", driver.findElement(By.id("2 0")).getText());
+    assertEquals(" ", driver.findElement(By.id("2 1")).getText());
+    assertEquals(" ", driver.findElement(By.id("2 2")).getText());
   }
 
   @After
