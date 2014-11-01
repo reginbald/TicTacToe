@@ -62,6 +62,7 @@
                     var form = $('form');
                     var button = this;
                     button.disabled = true;
+                    $('#results').html('Button Pressed').attr('class', 'alert alert-success');
                     $.ajax({
                         type: form.attr('method'),
                         url: form.attr('action'),
