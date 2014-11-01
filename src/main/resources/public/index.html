@@ -69,23 +69,23 @@
                     }).done(function( game ){
                         if(game === "1"){
                             $(button).val("o");
-                            $('#results').html('Player 2 turn').attr('class', 'alert alert-success');
+                            $('#results').html("Player 2 turn").attr('class', 'alert alert-success');
                         }
                         if(game === "2"){
                             $(button).val("x");
-                            $('#results').html('Player 1 turn').attr('class', 'alert alert-success');
+                            $('#results').html("Player 1 turn").attr('class', 'alert alert-success');
                         }
                         if(game === "Player 1 wins!"){
-                            $('#results').html('Player 1 wins!').attr('class', 'alert alert-success');  
+                            $('#results').html("Player 1 wins!").attr('class', 'alert alert-success');  
                         }
                         if(game === "Player 2 wins!"){
-                            $('#results').html('Player 1 wins!').attr('class', 'alert alert-success');
+                            $('#results').html("Player 2 wins!").attr('class', 'alert alert-success');
                         }
                         if(game === "It's a tie!"){
-                            $('#results').html('It's a tie!').attr('class', 'alert alert-success');
+                            $('#results').html("It's a tie!").attr('class', 'alert alert-success');
                         }
                     }).fail(function(){
-                        $('#results').html('Sorry to disturb you m'lady *tip* *tip* but the input is invalid').attr('class', 'alert alert-danger');
+                        $('#results').html("Sorry to disturb you m'lady *tip* *tip* but the input is invalid").attr('class', 'alert alert-danger');
                     });
                 });
             });
