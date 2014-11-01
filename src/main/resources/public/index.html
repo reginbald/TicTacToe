@@ -77,12 +77,12 @@
                         }
                         if(game === "Player 1 wins!"){
                             $(button).val("O");
-                            $('.btn').disabled = true;
+                            $("input[type=button]").attr("disabled", "disabled");
                             $('#results').html("Player 1 wins!").attr('class', 'alert alert-success');  
                         }
                         if(game === "Player 2 wins!"){
                             $(button).val("X");
-                            $('.btn').disabled = true;
+                            $("input[type=button]").attr("disabled", "disabled");
                             $('#results').html("Player 2 wins!").attr('class', 'alert alert-success');
                         }
                         if(game === "It's a tie!"){
