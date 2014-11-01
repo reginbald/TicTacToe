@@ -26,10 +26,10 @@ public class TicTacToeWeb implements SparkApplication{
         post(new Route("/"){
             @Override
             public Object handle(Request request, Response response){
-                //String coordinates = request.queryParams("gridSquare");
-                //String[] xy = coordinates.split("\\s+");
-                int x = 0;
-                int y = 0;
+                String coordinates = request.queryParams("gridSquare");
+                String[] xy = coordinates.split("\\s+");
+                int x = xy[0];
+                int y = xy[1];
 
                 game.insert(x, y);
                 game.changePlayers(); 
