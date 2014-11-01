@@ -3,6 +3,7 @@
 ./bin/clean
 ./bin/compile
 ./bin/unit_test
+./bin/selenium
 ./bin/code_coverage
 ./bin/package
 ./bin/deploy
