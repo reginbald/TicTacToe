@@ -76,9 +76,11 @@
                             $('#results').html("Player 1 turn").attr('class', 'alert alert-success');
                         }
                         if(game === "Player 1 wins!"){
+                            $('.btn').disabled = true;
                             $('#results').html("Player 1 wins!").attr('class', 'alert alert-success');  
                         }
                         if(game === "Player 2 wins!"){
+                            $('.btn').disabled = true;
                             $('#results').html("Player 2 wins!").attr('class', 'alert alert-success');
                         }
                         if(game === "It's a tie!"){
