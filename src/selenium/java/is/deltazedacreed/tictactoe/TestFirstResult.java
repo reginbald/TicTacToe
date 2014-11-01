@@ -13,9 +13,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
 /**
- * Class for testing webapp title.
+ * Class for testing webapp first result.
  */
-public class TestTitle {
+public class TestFirstResult {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -29,9 +29,9 @@ public class TestTitle {
   }
 
   @Test
-  public void testTitle() throws Exception {
+  public void testFirstResult() throws Exception {
     driver.get("http://tictactoe420.herokuapp.com/");
-    assertEquals("Tic Tac Toe", driver.getTitle());
+    assertEquals("Press a button to play!", driver.findElement(By.id("results")).getText());
   }
 
   @After
@@ -76,4 +76,4 @@ public class TestTitle {
     }
   }
 }
-
+mport org.openqa.selenium.support.ui.Select;
