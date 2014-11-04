@@ -28,7 +28,7 @@ public class Game{
     public StringBuilder writeGameField(){
         StringBuilder gameField = new StringBuilder();
 
-        for (int i = 0; i < 3; i++){
+        for(int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
                 gameField.append("[" + Board.getGrid()[i][j] + "]");
             }
