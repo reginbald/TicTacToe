@@ -15,7 +15,7 @@ public class Game{
     private static Scanner scanInt;
     private static Scanner scanString;
 
-    // Constructor
+    // Constructorinn
     public Game(){
         setBoard(new Board());
         playAgain = true;
