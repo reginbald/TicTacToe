@@ -1,4 +1,4 @@
-![Delta Zeda Creed](https://raw.githubusercontent.com/reginbald/TicTacToe/master/img/DZC.png "Delta Zeda Creed")
+![Delta Zeda Creed](https://raw.githubusercontent.com/reginbald/TicTacToe/master/img/DZC.png?token=AFbhxA4FON80-fkVCvVEntFFtTGdJXepks5UZlyMwA%3D%3D "Delta Zeda Creed")
 ***
 
 TicTacToe
