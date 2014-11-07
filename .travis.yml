@@ -13,8 +13,3 @@ deploy:
     production: tictactoeproduction
 notifications:
   email:
-    - joni12@ru.is
-    - ingibjorgj12@ru.is
-    - asas10@ru.is 
-    - grettir10@ru.is 
-    - benedikta13@ru.is
